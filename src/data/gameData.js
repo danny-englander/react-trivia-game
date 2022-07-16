@@ -9,7 +9,19 @@ const questionData = [
     correctAnswers: [
       "Martin Luther King",
     ],
-    questionImage: ""
+    questionIcon: ""
+  },
+  {
+    question: "Fatima has 10 Apples and LeToya has 20 Apples. If they each give 20% of their apples away, how many total apples are left between the 2 people?'",
+    incorrectAnswers: [
+      "18 Apples",
+      "22 Apples",
+      "26 Apples",
+    ],
+    correctAnswers: [
+      "24 Apples",
+    ],
+    questionIcon: ""
   },
 ];
 
