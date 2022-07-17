@@ -7,10 +7,11 @@ const Question = () => {
   const [gameState] = useContext(GameContext)
   // Define the question
   const currentQuestion = gameState.questions[gameState.currentQuestionIndex]
-  console.log('Question', gameState)
+  console.log('currentQuestion', currentQuestion)
   return (
     <>
-      <h2>{currentQuestion.question}</h2>
+      <h2>{currentQuestion.dataQuestion}</h2>
+
       <button></button>
       <button></button>
       <button></button>
