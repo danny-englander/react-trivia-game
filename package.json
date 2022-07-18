@@ -4,7 +4,6 @@
   "description": "",
   "keywords": [],
   "dependencies": {
-    "axios": "^0.26.1",
     "browserslist": "^4.21.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -14,12 +13,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.12",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-postcss": "^9.0.1",
-    "gulp-sass": "^5.1.0",
-    "gulp-sharp-responsive": "^0.4.0",
-    "postcss": "^8.4.14",
     "sass": "^1.53.0",
     "sass-rem": "^3.0.0"
   },
