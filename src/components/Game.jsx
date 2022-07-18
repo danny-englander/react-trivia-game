@@ -9,18 +9,6 @@ const Game = () => {
 
   return (
     <>
-      {/* If showResults is true. */}
-      {gameState.showResults && (
-        <>
-          <h1 className="">Congratulations!</h1>
-          You have finished the game You've got 4 of
-          {gameState.questions.length}
-          <button onClick={() => dispatch({ type: 'RESTART_GAME' })}>
-            Play again!
-          </button>
-        </>
-      )}
-
       {/* If showResults is false. */}
       {!gameState.showResults && (
         <>
@@ -36,6 +24,17 @@ const Game = () => {
           */}
           <button onClick={() => dispatch({ type: 'NEXT_QUESTION' })}>
             Next Question
+          </button>
+        </>
+      )}
+
+      {/* If showResults is true. */}
+      {gameState.showResults && (
+        <>
+          <h1 className="">Congratulations, you have finished the game!</h1>
+          You've got 4 of {gameState.questions.length} questions correct!
+          <button onClick={() => dispatch({ type: 'RESTART_GAME' })}>
+            Play again!
           </button>
         </>
       )}

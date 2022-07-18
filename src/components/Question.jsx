@@ -4,7 +4,7 @@ import Answer from './Answer'
 
 const Question = () => {
   // Define the global game context.
-  const [gameState] = useContext(GameContext)
+  const [gameState, dispatch] = useContext(GameContext)
   // Define the question
   const currentQuestion = gameState.questions[gameState.currentQuestionIndex]
   console.log('currentQuestion', currentQuestion)
@@ -12,14 +12,16 @@ const Question = () => {
     <>
       <h2>{currentQuestion.dataQuestion}</h2>
 
-      <button></button>
-      <button></button>
-      <button></button>
-      <button></button>
-      <Answer />
-      <Answer />
-      <Answer />
-      <Answer />
+      {/* Render array for each answer (map). */}
+      {gameState.answers.map((answer, index) => (
+        <Answer
+          answerText={answer}
+          key={index}
+          onSelectAnswer={(answerText) =>
+            dispatch({ type: 'SELECT_ANSWER', payload: answerText })
+          }
+        />
+      ))}
     </>
   )
 }
