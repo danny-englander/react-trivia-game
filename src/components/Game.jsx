@@ -6,7 +6,6 @@ const Game = () => {
   // Define the global game context.
   const [gameState, dispatch] = useContext(GameContext)
   // console.log('gameState', gameState)
-
   return (
     <>
       {/* If showResults is false. */}
