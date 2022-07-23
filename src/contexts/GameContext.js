@@ -13,62 +13,53 @@ const initialState = {
   questions,
   showResults: false,
   answers: shuffleAnswers(questions[0]),
-  currentAnswer: ''
-}
+  currentAnswer: "",
+  correctAnswersCount: 0,
+};
 
-// Define the reducer with state and action props.
 const reducer = (state, action) => {
-  // console.log("reducer", state, action)
   switch (action.type) {
-    // Test for NEXT_QUESTION, increment by 1 for each question.
+    case "SELECT_ANSWER": {
+      const correctAnswersCount =
+        action.payload ===
+          state.questions[state.currentQuestionIndex].correctAnswer
+          ? state.correctAnswersCount + 1
+          : state.correctAnswersCount;
+      return {
+        ...state,
+        currentAnswer: action.payload,
+        correctAnswersCount,
+      };
+    }
     case "NEXT_QUESTION": {
-      // Define a state that tests for the end of the game so we can go to the results page.
-      const showResults = state.currentQuestionIndex === state.questions.length - 1;
-      // True / False test if we have reached the end of our questions.
-      // Use a Conditional (ternary) operator here to test.
+      const showResults =
+        state.currentQuestionIndex === state.questions.length - 1;
       const currentQuestionIndex = showResults
         ? state.currentQuestionIndex
         : state.currentQuestionIndex + 1;
-      // Shuffled answers.
       const answers = showResults
         ? []
-        : shuffleAnswers(state.questions[currentQuestionIndex])
-      // Return the state and count upward for each question for the next button.
+        : shuffleAnswers(state.questions[currentQuestionIndex]);
       return {
         ...state,
         currentQuestionIndex,
         showResults,
         answers,
+        currentAnswer: "",
       };
     }
-
     case "RESTART_GAME": {
-      // Start the game over, i.e. return to the initial state.
-      return initialState
+      return initialState;
     }
-
-    case "SELECT_ANSWER": {
-      return {
-        ...state,
-        currentAnswer: action.payload
-      }
-    }
-
     default: {
-      // Return the first argument of the state.
-      return state
+      return state;
     }
   }
-}
+};
 
-// Export the global context.
-export const GameContext = createContext()
-// Create a wrapper, "<GameProvider>" that renders children with the state.
-// This gets wrapped around the <Game /> component call in App.js
+export const GameContext = createContext();
+
 export const GameProvider = ({ children }) => {
-  // useState is good but not always scalable so we can implement useReducer instead.
-  // Define and read the state.
-  const value = useReducer(reducer, initialState)
-  console.log('state', value)
-  return <GameContext.Provider value={value}>{children}</GameContext.Provider>
-}
+  const value = useReducer(reducer, initialState);
+  return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
+};

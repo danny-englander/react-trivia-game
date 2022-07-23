@@ -3,41 +3,48 @@ import { GameContext } from '../contexts/GameContext'
 import Question from './Question'
 
 const Game = () => {
-  // Define the global game context.
   const [gameState, dispatch] = useContext(GameContext)
-  // console.log('gameState', gameState)
   return (
-    <>
-      {/* If showResults is false. */}
+    <div className="quiz">
+      {gameState.showResults && (
+        <div className="results">
+          <h1 className="congratulations">
+            Congratulations, you have completed the quiz!
+          </h1>
+
+          <div className="results-info">
+            <div>
+              You got {gameState.correctAnswersCount} of{' '}
+              {gameState.questions.length}
+            </div>
+          </div>
+          <div
+            className="next-button"
+            onClick={() => dispatch({ type: 'RESTART_GAME' })}
+          >
+            Restart the Game
+          </div>
+        </div>
+      )}
+
       {!gameState.showResults && (
-        <>
-          <p className="">
+        <div>
+          <div className="score">
             Question {gameState.currentQuestionIndex + 1}/
             {gameState.questions.length}
-          </p>
+          </div>
 
           <Question />
-          {/*
-          Here we instantiate useReducer with a click event as a dispatch method.
-          Call the state as defined above.
-          */}
-          <button onClick={() => dispatch({ type: 'NEXT_QUESTION' })}>
-            Next Question
-          </button>
-        </>
-      )}
 
-      {/* If showResults is true. */}
-      {gameState.showResults && (
-        <>
-          <h1 className="">Congratulations, you have finished the game!</h1>
-          You've got 4 of {gameState.questions.length} questions correct!
-          <button onClick={() => dispatch({ type: 'RESTART_GAME' })}>
-            Play again!
+          <button
+            className="next-button"
+            onClick={() => dispatch({ type: 'NEXT_QUESTION' })}
+          >
+            Next question
           </button>
-        </>
+        </div>
       )}
-    </>
+    </div>
   )
 }
 

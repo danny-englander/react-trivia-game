@@ -10,9 +10,7 @@ const Question = () => {
   console.log('currentQuestion', currentQuestion)
   return (
     <>
-      <h2>{currentQuestion.dataQuestion}</h2>
-
-      {/* {currentQuestion} */}
+      <h1 className="question">{currentQuestion.question}</h1>
 
       <form>
         <fieldset>
@@ -24,6 +22,9 @@ const Question = () => {
             <Answer
               answerText={answer}
               key={index}
+              index={index}
+              currentAnswer={gameState.currentAnswer}
+              correctAnswer={currentQuestion.correctAnswer}
               onSelectAnswer={(answerText) =>
                 dispatch({ type: 'SELECT_ANSWER', payload: answerText })
               }
