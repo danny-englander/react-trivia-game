@@ -18,8 +18,7 @@ const initialState = {
 
 // Define the reducer with state and action props.
 const reducer = (state, action) => {
-  console.log("reducer", state, action)
-
+  // console.log("reducer", state, action)
   switch (action.type) {
     // Test for NEXT_QUESTION, increment by 1 for each question.
     case "NEXT_QUESTION": {
@@ -39,7 +38,7 @@ const reducer = (state, action) => {
         ...state,
         currentQuestionIndex,
         showResults,
-        answers
+        answers,
       };
     }
 

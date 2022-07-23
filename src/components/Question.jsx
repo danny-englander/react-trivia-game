@@ -12,16 +12,25 @@ const Question = () => {
     <>
       <h2>{currentQuestion.dataQuestion}</h2>
 
-      {/* Render array for each answer (map). */}
-      {gameState.answers.map((answer, index) => (
-        <Answer
-          answerText={answer}
-          key={index}
-          onSelectAnswer={(answerText) =>
-            dispatch({ type: 'SELECT_ANSWER', payload: answerText })
-          }
-        />
-      ))}
+      {/* {currentQuestion} */}
+
+      <form>
+        <fieldset>
+          <legend className="visually-hidden">
+            Answers for this question:
+          </legend>
+          {/* Render array for each answer (map). */}
+          {gameState.answers.map((answer, index) => (
+            <Answer
+              answerText={answer}
+              key={index}
+              onSelectAnswer={(answerText) =>
+                dispatch({ type: 'SELECT_ANSWER', payload: answerText })
+              }
+            />
+          ))}
+        </fieldset>
+      </form>
     </>
   )
 }
