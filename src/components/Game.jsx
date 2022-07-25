@@ -18,7 +18,7 @@ const Game = () => {
           {gameState.questions.length}
           <Question />
           <button onClick={() => dispatch({ type: 'NEXT_QUESTION' })}>
-            {/* @todo add form validation to check if a radio button has been checked. */}
+            {/* @todo add form validation to check if a radio button has not been checked. */}
             Next question
           </button>
         </>

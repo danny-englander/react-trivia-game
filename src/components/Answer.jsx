@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Answer = ({
   answerText,
@@ -26,9 +26,6 @@ const Answer = ({
     ? `Sorry, wrong answer, the correct answer is ${correctAnswer}`
     : ''
 
-  const firstRadio = index === 0 ? 'checked' : ''
-  const [checked, setChecked] = useState(true)
-
   return (
     <>
       <div className="form-item">
@@ -37,14 +34,7 @@ const Answer = ({
           className={`answer ${correctAnswerClass} ${wrongAnswerClass} ${disabledClass}`}
           onClick={() => onSelectAnswer(answerText)}
         >
-          <input
-            type="radio"
-            name="answer"
-            required
-            value={answerText}
-            // defaultChecked={firstRadio}
-            // onChange={() => setChecked(!checked)}
-          />
+          <input type="radio" name="answer" required value={answerText} />
 
           <span>{numberMapping[index]}. </span>
           <span>{answerText}</span>

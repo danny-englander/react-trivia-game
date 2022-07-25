@@ -9,6 +9,7 @@ const Results = () => {
 
       <div>
         You got {gameState.correctAnswersCount} of {gameState.questions.length}
+        questions correct.
       </div>
 
       {/*
