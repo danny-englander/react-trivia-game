@@ -1,3 +1,4 @@
+// Shuffle answers function.
 export const shuffleAnswers = (question) => {
   const unshuffledAnswers = [
     question.correctAnswer,
@@ -12,3 +13,4 @@ export const shuffleAnswers = (question) => {
     .sort((a, b) => a.sort - b.sort)
     .map((a) => a.value);
 };
+

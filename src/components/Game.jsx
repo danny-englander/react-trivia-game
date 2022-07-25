@@ -1,50 +1,29 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
 import Question from './Question'
+import Results from './Results'
 
 const Game = () => {
   const [gameState, dispatch] = useContext(GameContext)
+  console.log('gameState in Game.jsx', gameState)
   return (
-    <div className="quiz">
-      {gameState.showResults && (
-        <div className="results">
-          <h1 className="congratulations">
-            Congratulations, you have completed the quiz!
-          </h1>
+    <>
+      {/* If showResults is true. */}
+      {gameState.showResults && <Results />}
 
-          <div className="results-info">
-            <div>
-              You got {gameState.correctAnswersCount} of{' '}
-              {gameState.questions.length}
-            </div>
-          </div>
-          <div
-            className="next-button"
-            onClick={() => dispatch({ type: 'RESTART_GAME' })}
-          >
-            Restart the Game
-          </div>
-        </div>
-      )}
-
+      {/* If showResults is false. */}
       {!gameState.showResults && (
-        <div>
-          <div className="score">
-            Question {gameState.currentQuestionIndex + 1}/
-            {gameState.questions.length}
-          </div>
-
+        <>
+          Question {gameState.currentQuestionIndex + 1}/
+          {gameState.questions.length}
           <Question />
-
-          <button
-            className="next-button"
-            onClick={() => dispatch({ type: 'NEXT_QUESTION' })}
-          >
+          <button onClick={() => dispatch({ type: 'NEXT_QUESTION' })}>
+            {/* @todo add form validation to check if a radio button has been checked. */}
             Next question
           </button>
-        </div>
+        </>
       )}
-    </div>
+    </>
   )
 }
 

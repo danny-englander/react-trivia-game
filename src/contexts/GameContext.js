@@ -18,6 +18,7 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
+  console.log("reducer in GameContext", state, action)
   switch (action.type) {
     case "SELECT_ANSWER": {
       const correctAnswersCount =
@@ -25,6 +26,7 @@ const reducer = (state, action) => {
           state.questions[state.currentQuestionIndex].correctAnswer
           ? state.correctAnswersCount + 1
           : state.correctAnswersCount;
+      console.log('correct answer count', correctAnswersCount)
       return {
         ...state,
         currentAnswer: action.payload,
@@ -32,11 +34,14 @@ const reducer = (state, action) => {
       };
     }
     case "NEXT_QUESTION": {
+      // Define a state that tests for the end of the game so we can go to the results page.
       const showResults =
         state.currentQuestionIndex === state.questions.length - 1;
+      // Test for the next question, increment by 1 for each question.
       const currentQuestionIndex = showResults
         ? state.currentQuestionIndex
         : state.currentQuestionIndex + 1;
+      // Shuffled answers.
       const answers = showResults
         ? []
         : shuffleAnswers(state.questions[currentQuestionIndex]);
@@ -49,6 +54,7 @@ const reducer = (state, action) => {
       };
     }
     case "RESTART_GAME": {
+      // Start the game over, i.e. return to the initial state.
       return initialState;
     }
     default: {
