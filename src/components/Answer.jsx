@@ -32,9 +32,14 @@ const Answer = ({
         <label
           aria-label={`Answer ${numberMapping[index]}: ${answerText}`}
           className={`answer ${correctAnswerClass} ${wrongAnswerClass} ${disabledClass}`}
-          onClick={() => onSelectAnswer(answerText)}
         >
-          <input type="radio" name="answer" required value={answerText} />
+          <input
+            type="radio"
+            name="answer"
+            required
+            value={answerText}
+            checked={answerText === currentAnswer}
+          />
 
           <span>{numberMapping[index]}. </span>
           <span>{answerText}</span>

@@ -17,19 +17,26 @@ const Question = () => {
           <legend className="visually-hidden">
             Answers for this question:
           </legend>
-          {/* Render array for each answer (map). */}
-          {gameState.answers.map((answer, index) => (
-            <Answer
-              answerText={answer}
-              key={index}
-              index={index}
-              currentAnswer={gameState.currentAnswer}
-              correctAnswer={currentQuestion.correctAnswer}
-              onSelectAnswer={(answerText) =>
-                dispatch({ type: 'SELECT_ANSWER', payload: answerText })
-              }
-            />
-          ))}
+          <div
+            onChange={(e) => {
+              console.log('input target', e.target.value)
+              dispatch({ type: 'SELECT_ANSWER', payload: e.target.value })
+            }}
+          >
+            {/* Render array for each answer (map). */}
+            {gameState.answers.map((answer, index) => (
+              <Answer
+                answerText={answer}
+                key={index}
+                index={index}
+                currentAnswer={gameState.currentAnswer}
+                correctAnswer={currentQuestion.correctAnswer}
+                onSelectAnswer={(answerText) =>
+                  dispatch({ type: 'SELECT_ANSWER', payload: answerText })
+                }
+              />
+            ))}
+          </div>
         </fieldset>
       </form>
     </>
