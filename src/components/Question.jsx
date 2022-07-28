@@ -8,6 +8,12 @@ const Question = () => {
   // Define the question
   const currentQuestion = gameState.questions[gameState.currentQuestionIndex]
   console.log('currentQuestion', currentQuestion)
+
+  const onChange = (e) => {
+    console.log('input target', e.target.value)
+    dispatch({ type: 'SELECT_ANSWER', payload: e.target.value })
+  }
+
   return (
     <>
       <h1 className="question">{currentQuestion.question}</h1>
@@ -17,12 +23,7 @@ const Question = () => {
           <legend className="visually-hidden">
             Answers for this question:
           </legend>
-          <div
-            onChange={(e) => {
-              console.log('input target', e.target.value)
-              dispatch({ type: 'SELECT_ANSWER', payload: e.target.value })
-            }}
-          >
+          <div>
             {/* Render array for each answer (map). */}
             {gameState.answers.map((answer, index) => (
               <Answer
@@ -31,9 +32,7 @@ const Question = () => {
                 index={index}
                 currentAnswer={gameState.currentAnswer}
                 correctAnswer={currentQuestion.correctAnswer}
-                onSelectAnswer={(answerText) =>
-                  dispatch({ type: 'SELECT_ANSWER', payload: answerText })
-                }
+                onSelectAnswer={onChange}
               />
             ))}
           </div>

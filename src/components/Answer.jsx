@@ -38,6 +38,7 @@ const Answer = ({
             name="answer"
             required
             value={answerText}
+            onChange={onSelectAnswer}
             checked={answerText === currentAnswer}
           />
 
