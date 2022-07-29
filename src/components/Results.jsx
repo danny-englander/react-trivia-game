@@ -16,12 +16,12 @@ const Results = () => {
        * Here we instantiate useReducer with a click event as a dispatch method.
        * Call the state as defined above.
        */}
-      <div
+      <button
         className="next-button"
         onClick={() => dispatch({ type: 'RESTART_GAME' })}
       >
         Restart the Game
-      </div>
+      </button>
     </>
   )
 }

@@ -30,7 +30,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         currentAnswer: action.payload,
-        correctAnswersCount,
+        correctAnswersCount
       };
     }
     case "NEXT_QUESTION": {

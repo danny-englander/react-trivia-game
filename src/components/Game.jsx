@@ -17,8 +17,9 @@ const Game = () => {
           Question {gameState.currentQuestionIndex + 1}/
           {gameState.questions.length}
           <Question />
+          {/* FIXME: enable disable buttons below with conditions. */}
+          <button>Lock in Answer!</button>
           <button onClick={() => dispatch({ type: 'NEXT_QUESTION' })}>
-            {/* @todo add form validation to check if a radio button has not been checked. */}
             Next question
           </button>
         </>
