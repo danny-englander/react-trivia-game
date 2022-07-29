@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GameContext } from '../contexts/GameContext'
 
 const Answer = ({
   answerText,
@@ -7,6 +8,8 @@ const Answer = ({
   currentAnswer,
   correctAnswer,
 }) => {
+  const [gameState, dispatch] = useContext(GameContext)
+
   // Answer number array.
   const numberMapping = ['1', '2', '3', '4']
 
@@ -37,6 +40,7 @@ const Answer = ({
             type="radio"
             name="answer"
             required
+            disabled={gameState.answerLocked}
             value={answerText}
             onChange={onSelectAnswer}
             checked={answerText === currentAnswer}

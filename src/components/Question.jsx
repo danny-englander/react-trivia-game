@@ -1,20 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { GameContext } from '../contexts/GameContext'
 import Answer from './Answer'
 
-const Question = () => {
+// Receive props from Game.
+const Question = ({ onChange, onLockClick, selectedAnswer }) => {
   // Define the global game context.
   const [gameState, dispatch] = useContext(GameContext)
   // Define the current question gameState index.
   const currentQuestion = gameState.questions[gameState.currentQuestionIndex]
   console.log('currentQuestion', currentQuestion)
-
-  // Custom onchange for input click event.
-  // (For prop - onSelectAnswer).
-  const onChange = (e) => {
-    console.log('input target', e.target.value)
-    dispatch({ type: 'SELECT_ANSWER', payload: e.target.value })
-  }
 
   return (
     <>
@@ -22,8 +16,7 @@ const Question = () => {
 
       <h2>
         {/* FIXME: make this appear on some kind of lock in answer button click */}
-        Correct! / Incorrect, the correct answer is{' '}
-        {currentQuestion.correctAnswer}
+        {gameState.resultsMessage}
       </h2>
 
       <h3>
@@ -43,7 +36,7 @@ const Question = () => {
                 answerText={answer}
                 key={index}
                 index={index}
-                currentAnswer={gameState.currentAnswer}
+                currentAnswer={selectedAnswer}
                 correctAnswer={currentQuestion.correctAnswer}
                 onSelectAnswer={onChange}
               />
