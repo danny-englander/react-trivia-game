@@ -14,15 +14,13 @@ const Question = ({ onChange, onLockClick, selectedAnswer }) => {
     <>
       <h1 className="question">{currentQuestion.question}</h1>
 
-      <h2>
-        {/* FIXME: make this appear on some kind of lock in answer button click */}
-        {gameState.resultsMessage}
-      </h2>
-
-      <h3>
-        Current Score: {gameState.correctAnswersCount} of{' '}
-        {gameState.questions.length} questions correct
-      </h3>
+      {/* If gameState.resultsMessage, show the results message and score. */}
+      {gameState.resultsMessage && (
+        <>
+          <h2>{gameState.resultsMessage}</h2>
+          <h3>Current Score: {gameState.correctAnswersCount}</h3>
+        </>
+      )}
 
       <form>
         <fieldset>

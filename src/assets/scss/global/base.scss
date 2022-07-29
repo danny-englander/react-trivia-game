@@ -1,0 +1,30 @@
+@use "../../../../node_modules/sass-rem" as rem;
+
+html {
+  box-sizing: border-box;
+  font-size: rem.convert(16px);
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+.screenreader-text {
+  position: absolute;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+
+  &:focus {
+    color: #333;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    position: static;
+    margin: auto;
+    padding: 20px;
+  }
+}
