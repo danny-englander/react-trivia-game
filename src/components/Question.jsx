@@ -16,10 +16,10 @@ const Question = ({ onChange, onLockClick, selectedAnswer }) => {
 
       {/* If gameState.resultsMessage, show the results message and score. */}
       {gameState.resultsMessage && (
-        <>
+        <div aria-live="assertive" role="alert">
           <h2>{gameState.resultsMessage}</h2>
           <h3>Current Score: {gameState.correctAnswersCount}</h3>
-        </>
+        </div>
       )}
 
       <form>

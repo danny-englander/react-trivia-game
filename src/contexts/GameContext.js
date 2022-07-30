@@ -36,7 +36,7 @@ const reducer = (state, action) => {
       if (correctAnswer === action.payload) {
         resultsMessage = "Correct!"
       } else {
-        resultsMessage = `Incorrect, the correct answer is ${correctAnswer}`
+        resultsMessage = `Incorrect: the correct answer is ${correctAnswer}`
       }
 
       // Ternary version of the above.

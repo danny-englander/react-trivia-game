@@ -1,0 +1,15 @@
+@use "node_modules/sass-rem" as rem;
+@use "../utils" as *;
+@use "node_modules/sass-mq/mq" with (
+  $breakpoints: $breakpoints
+);
+
+// body {
+//   @include mq.mq($from: wide) {
+//     background: rgb(144, 0, 255);
+//   }
+// }
+
+.btn {
+  background-color: $c_green;
+}

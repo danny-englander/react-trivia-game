@@ -3,26 +3,26 @@ const questionData = [
   {
     dataID: "1",
     dataMultiple: "false",
-    question: "What person said, \"I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin, but by the content of their character.\" ",
+    question: "Which Apollo mission was the first one to land on the Moon?",
     incorrectAnswers: [
-      "Harriet Tubman",
-      "Rosa Parks",
-      "Malcom X",
+      "Apollo 14",
+      "Apollo 8",
+      "Apollo 10",
     ],
-    correctAnswer: "Dr Martin Luther King Jr",
+    correctAnswer: "Apollo 11",
     dataBG: "foo_icon"
   },
 
   {
     dataID: "2",
     dataMultiple: "false",
-    question: "Fatima has 10 Apples and LeToya has 20 Apples. If they each give 20% of their apples away, how many total apples are left between the 2 people?",
+    question: "The asteroid belt is located between which two planets?",
+    correctAnswer: "Mars and Jupiter",
     incorrectAnswers: [
-      "18 Apples",
-      "22 Apples",
-      "26 Apples",
+      "Jupiter and Saturn",
+      "Mercury and Venus",
+      "Earth and Mars"
     ],
-    correctAnswer: "24 Apples",
     dataBG: ""
   },
   {
@@ -41,7 +41,7 @@ const questionData = [
   {
     dataID: "4",
     dataMultiple: "false",
-    question: "Name a Formula One race car driver who has won the world championship 7 times",
+    question: "This Formula One race car driver who has won the world championship 7 times.",
     incorrectAnswers: [
       "Ferdinand Alonso",
       "Niki Lauda",

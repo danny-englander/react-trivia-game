@@ -8,23 +8,25 @@ import './assets/scss/global-styles.scss'
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <div className=''>
+        <a id='skip-nav' className='screenreader-text' href='#main-content'>
+          Skip Navigation or Skip to Content
+        </a>
+      </div>
 
-      <a id='skip-nav' class='screenreader-text' href='#main-content'>
-        Skip Navigation or Skip to Content
-      </a>
+      <div className="App">
+        <Header />
+        <main id='main-content'>
+          {/* Wrap Game in the <GameProvider> wrap so as to get context and state globally. */}
+          <GameProvider>
+            <Game />
+          </GameProvider>
+        </main>
 
-      <Header />
-
-      <main id='main-content'>
-        {/* Wrap Game in the <GameProvider> wrap so as to get context and state globally. */}
-        <GameProvider>
-          <Game />
-        </GameProvider>
-      </main>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }
 

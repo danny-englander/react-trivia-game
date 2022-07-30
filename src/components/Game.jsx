@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { GameContext } from '../contexts/GameContext'
 import Question from './Question'
 import Results from './Results'
+import Button from '../assets/scss/components/button.module.scss'
 
 const Game = () => {
   const [gameState, dispatch] = useContext(GameContext)
@@ -22,18 +23,19 @@ const Game = () => {
   const onLockClick = (e) => {
     console.log('onLockClick selectedAnswer', selectedAnswer)
     dispatch({ type: 'SELECT_ANSWER', payload: selectedAnswer })
-    // setSelectedAnswer('')
   }
 
   console.log('gameState in Game.jsx', gameState)
+
   return (
     <>
-      {/* If showResults is true. */}
+      {/* If showResults is true (last question), go to the results page. */}
       {gameState.showResults && <Results />}
 
-      {/* If showResults is false. */}
+      {/* If showResults is false, show questions. */}
       {!gameState.showResults && (
         <>
+          {/* Question component, pass props into component. */}
           Question {gameState.currentQuestionIndex + 1}/
           {gameState.questions.length}
           <Question
@@ -41,15 +43,23 @@ const Game = () => {
             onLockClick={onLockClick}
             selectedAnswer={selectedAnswer}
           />
-          {/* FIXME: enable disable buttons below with conditions. */}
+          {/* Enable disable buttons below with conditions and add accessibility. */}
+          {/* Lock answer button. */}
           <button
             disabled={gameState.answerLocked === true}
+            aria-disabled={gameState.answerLocked === true}
             onClick={onLockClick}
+            className={`btn-state ${Button.btn} ${
+              gameState.answerLocked === true ? 'foo' : 'bar'
+            }`}
           >
             Lock in Answer!
           </button>
+          {/* Next button. */}
           <button
             disabled={gameState.answerLocked === false}
+            aria-disabled={gameState.answerLocked === false}
+            aria-describedby={}
             onClick={() => dispatch({ type: 'NEXT_QUESTION' })}
           >
             Next question

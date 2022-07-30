@@ -1,8 +1,9 @@
 @use "../../../../node_modules/sass-rem" as rem;
+@use "../utils" as *;
 
 html {
   box-sizing: border-box;
-  font-size: rem.convert(16px);
+  font-size: rem.convert(18px);
 }
 
 *,
@@ -19,7 +20,7 @@ html {
   top: auto;
 
   &:focus {
-    color: #333;
+    color: $c_maroon;
     display: inline-block;
     height: auto;
     width: auto;
