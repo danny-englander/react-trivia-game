@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
-import Button from '../assets/scss/components/button.module.scss'
+import StyleButton from '../assets/scss/components/button.module.scss'
 
 const Buttons = ({ onLockClick }) => {
   const [gameState, dispatch] = useContext(GameContext)
@@ -14,7 +14,7 @@ const Buttons = ({ onLockClick }) => {
         disabled={gameState.answerLocked === true}
         aria-disabled={gameState.answerLocked === true}
         onClick={onLockClick}
-        className={`btn-state ${Button.btn} ${
+        className={`btn-state ${StyleButton.btn} ${
           gameState.answerLocked === true ? 'foo' : 'bar'
         }`}
       >

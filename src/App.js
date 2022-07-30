@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import 'normalize-css'
 import './assets/scss/global-styles.scss'
-import Container from './assets/scss/components/container.module.scss'
+import StyleContainer from './assets/scss/components/container.module.scss'
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         </a>
       </div>
 
-      <div className={Container.app_wrap}>
-        <div className={Container.app_inner}>
+      <div className={StyleContainer.app_wrap}>
+        <div className={StyleContainer.app_inner}>
           <Header />
           <main id='main-content'>
             {/* Wrap Game in the <GameProvider> wrap so as to get context and state globally. */}

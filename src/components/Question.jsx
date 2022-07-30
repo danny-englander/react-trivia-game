@@ -14,7 +14,7 @@ const Question = ({ onChange, selectedAnswer }) => {
     <>
       {/* Question number, e.g. 1/8 */}
       <div className="eyebrow">
-        <span>Question</span>
+        <span>Question: </span>
         <span>
           {gameState.currentQuestionIndex + 1}/{gameState.questions.length}
         </span>

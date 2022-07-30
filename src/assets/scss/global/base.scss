@@ -12,6 +12,11 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  background: url(../../img/game-bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
 .screenreader-text {
   position: absolute;
   left: -999px;
@@ -28,8 +33,4 @@ html {
     margin: auto;
     padding: 20px;
   }
-}
-
-h1 {
-  font-family: "EB Garamond", serif;
 }
