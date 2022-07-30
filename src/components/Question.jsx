@@ -3,7 +3,7 @@ import { GameContext } from '../contexts/GameContext'
 import Answer from './Answer'
 
 // Receive props from Game.
-const Question = ({ onChange, onLockClick, selectedAnswer }) => {
+const Question = ({ onChange, selectedAnswer }) => {
   // Define the global game context.
   const [gameState, dispatch] = useContext(GameContext)
   // Define the current question gameState index.
@@ -12,6 +12,15 @@ const Question = ({ onChange, onLockClick, selectedAnswer }) => {
 
   return (
     <>
+      {/* Question number, e.g. 1/8 */}
+      <div className="eyebrow">
+        <span>Question</span>
+        <span>
+          {gameState.currentQuestionIndex + 1}/{gameState.questions.length}
+        </span>
+      </div>
+
+      {/* Game question */}
       <h1 className="question">{currentQuestion.question}</h1>
 
       {/* If gameState.resultsMessage, show the results message and score. */}
@@ -22,6 +31,7 @@ const Question = ({ onChange, onLockClick, selectedAnswer }) => {
         </div>
       )}
 
+      {/* Start the answers form */}
       <form>
         <fieldset>
           <legend className="visually-hidden">

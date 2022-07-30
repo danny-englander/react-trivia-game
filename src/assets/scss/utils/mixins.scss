@@ -1,3 +1,5 @@
+@use "sass-rem" as rem;
+
 // Hide visually.
 @mixin visually-hidden() {
   position: absolute !important;
@@ -6,4 +8,11 @@
   height: 1px;
   width: 1px;
   word-wrap: normal;
+}
+
+@mixin container($max-width) {
+  max-width: rem.convert($max-width);
+  padding-left: rem.convert(30px);
+  padding-right: rem.convert(30px);
+  margin: 0 auto;
 }

@@ -1,0 +1,21 @@
+@use "sass-rem" as rem;
+@use "../utils" as *;
+@use "sass-mq/mq" with (
+  $breakpoints: $breakpoints
+);
+
+.h1,
+h1 {
+  font-size: rem.convert(30px);
+  line-height: rem.convert(38px);
+  margin-bottom: rem.convert(19px);
+  letter-spacing: rem.convert(1px);
+  font-weight: 400;
+  margin-top: 0;
+
+  @include mq.mq($from: large) {
+    font-size: rem.convert(44px);
+    line-height: rem.convert(50px);
+    margin-bottom: rem.convert(26px);
+  }
+}

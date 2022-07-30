@@ -1,0 +1,13 @@
+@use "sass-rem" as rem;
+@use "../utils" as *;
+
+.app_wrap {
+  @include container(1200px);
+  margin-top: 100px;
+}
+
+.app_inner {
+  border-radius: 20px;
+  box-shadow: 1px 0px 20px 3px rgba(0, 0, 0, 0.1);
+  padding: rem.convert(30px);
+}

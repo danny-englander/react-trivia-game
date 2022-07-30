@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { GameContext } from '../contexts/GameContext'
 import Question from './Question'
 import Results from './Results'
-import Button from '../assets/scss/components/button.module.scss'
+
 import Buttons from './Buttons'
 
 const Game = () => {
@@ -37,8 +37,7 @@ const Game = () => {
       {!gameState.showResults && (
         <>
           {/* Question component, pass props into component. */}
-          Question {gameState.currentQuestionIndex + 1}/
-          {gameState.questions.length}
+
           <Question
             onChange={onChange}
             onLockClick={onLockClick}
