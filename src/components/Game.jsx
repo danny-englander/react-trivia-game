@@ -3,6 +3,7 @@ import { GameContext } from '../contexts/GameContext'
 import Question from './Question'
 import Results from './Results'
 import Button from '../assets/scss/components/button.module.scss'
+import Buttons from './Buttons'
 
 const Game = () => {
   const [gameState, dispatch] = useContext(GameContext)
@@ -43,27 +44,7 @@ const Game = () => {
             onLockClick={onLockClick}
             selectedAnswer={selectedAnswer}
           />
-          {/* Enable disable buttons below with conditions and add accessibility. */}
-          {/* Lock answer button. */}
-          <button
-            disabled={gameState.answerLocked === true}
-            aria-disabled={gameState.answerLocked === true}
-            onClick={onLockClick}
-            className={`btn-state ${Button.btn} ${
-              gameState.answerLocked === true ? 'foo' : 'bar'
-            }`}
-          >
-            Lock in Answer!
-          </button>
-          {/* Next button. */}
-          <button
-            disabled={gameState.answerLocked === false}
-            aria-disabled={gameState.answerLocked === false}
-            aria-describedby={}
-            onClick={() => dispatch({ type: 'NEXT_QUESTION' })}
-          >
-            Next question
-          </button>
+          <Buttons onLockClick={onLockClick} />
         </>
       )}
     </>
