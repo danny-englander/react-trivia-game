@@ -13,8 +13,10 @@ html {
 }
 
 body {
-  background: url(../../img/game-bg.jpg) no-repeat center center fixed;
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .screenreader-text {
