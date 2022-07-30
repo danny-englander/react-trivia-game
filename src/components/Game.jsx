@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react'
 import { GameContext } from '../contexts/GameContext'
 import Question from './Question'
 import Results from './Results'
-
 import Buttons from './Buttons'
 
 const Game = () => {
@@ -37,12 +36,12 @@ const Game = () => {
       {!gameState.showResults && (
         <>
           {/* Question component, pass props into component. */}
-
           <Question
             onChange={onChange}
             onLockClick={onLockClick}
             selectedAnswer={selectedAnswer}
           />
+          {/* Buttons */}
           <Buttons onLockClick={onLockClick} />
         </>
       )}

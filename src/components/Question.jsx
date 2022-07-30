@@ -1,24 +1,19 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
 import Answer from './Answer'
+import Eyebrow from './Eyebrow'
 
 // Receive props from Game.
 const Question = ({ onChange, selectedAnswer }) => {
   // Define the global game context.
-  const [gameState, dispatch] = useContext(GameContext)
+  const [gameState] = useContext(GameContext)
   // Define the current question gameState index.
   const currentQuestion = gameState.questions[gameState.currentQuestionIndex]
   console.log('currentQuestion', currentQuestion)
 
   return (
     <>
-      {/* Question number, e.g. 1/8 */}
-      <div className="eyebrow">
-        <span>Question: </span>
-        <span>
-          {gameState.currentQuestionIndex + 1}/{gameState.questions.length}
-        </span>
-      </div>
+      <Eyebrow gameState={gameState} />
 
       {/* Game question */}
       <h1 className="question">{currentQuestion.question}</h1>
@@ -27,7 +22,6 @@ const Question = ({ onChange, selectedAnswer }) => {
       {gameState.resultsMessage && (
         <div aria-live="assertive" role="alert">
           <h2>{gameState.resultsMessage}</h2>
-          <h3>Current Score: {gameState.correctAnswersCount}</h3>
         </div>
       )}
 

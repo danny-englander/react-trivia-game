@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
 
+// Receive answer props from Question.
 const Answer = ({
   answerText,
   onSelectAnswer,
@@ -9,25 +10,16 @@ const Answer = ({
   correctAnswer,
 }) => {
   const [gameState, dispatch] = useContext(GameContext)
-
   // Answer number array.
   const numberMapping = ['1', '2', '3', '4']
-
   // Define correct and incorrect answers.
   const isCorrectAnswer = currentAnswer && answerText === correctAnswer
   const isIncorrectAnswer =
     currentAnswer === answerText && currentAnswer !== correctAnswer
-
   // Custom answer classes.
   const correctAnswerClass = isCorrectAnswer ? 'correct-answer' : ''
   const wrongAnswerClass = isIncorrectAnswer ? 'wrong-answer' : ''
   const disabledClass = currentAnswer ? 'disabled-answer' : ''
-
-  // Custom answer messages.
-  const correctAnswerMessage = isCorrectAnswer ? 'Correct!' : ''
-  const incorrectAnswerMessage = isIncorrectAnswer
-    ? `Sorry, wrong answer, the correct answer is ${correctAnswer}`
-    : ''
 
   return (
     <>
@@ -48,7 +40,6 @@ const Answer = ({
 
           <span>{numberMapping[index]}. </span>
           <span>{answerText}</span>
-          <span></span>
         </label>
       </div>
     </>
