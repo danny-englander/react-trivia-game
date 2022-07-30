@@ -1,6 +1,6 @@
-@use "node_modules/sass-rem" as rem;
+@use "sass-rem" as rem;
 @use "../utils" as *;
-@use "node_modules/sass-mq/mq" with (
+@use "sass-mq/mq" with (
   $breakpoints: $breakpoints
 );
 
