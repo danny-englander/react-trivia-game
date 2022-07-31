@@ -16,7 +16,7 @@ h1 {
 
   @include mq.mq($from: large) {
     font-size: rem.convert(48px);
-    line-height: rem.convert(58px);
+    line-height: rem.convert(55px);
     margin-bottom: rem.convert(26px);
   }
 }

@@ -22,7 +22,7 @@ const Question = ({ onChange, selectedAnswer }) => {
         <div className={styleQuestion.iconWrap}>
           {/* Question icon */}
           <BsQuestionLg
-            title="Question"
+            title="Question mark icon"
             size="4em"
             className={styleQuestion.icon}
           />

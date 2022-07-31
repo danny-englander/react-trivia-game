@@ -11,13 +11,13 @@
 // }
 
 .wrap {
-  padding: 20px 0;
+  padding: rem.convert(20px 0);
 }
 
 .primary {
   background-color: $c_light_teal;
   border: 1px solid $c_medium_gray;
-  padding: 10px 18px;
+  padding: rem.convert(10px 18px);
 }
 
 .btnDisabled {

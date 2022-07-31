@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="273px" height="62px" viewBox="0 0 273 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="277px" height="62px" viewBox="0 0 277 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Group</title>
     <defs>
         <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" id="radialGradient-1">
             <stop stop-color="#50D5E7" offset="0%"></stop>
             <stop stop-color="#FA7D77" offset="100%"></stop>
         </radialGradient>
+        <circle id="path-2" cx="22" cy="34" r="22"></circle>
+        <filter x="-15.9%" y="-11.4%" width="131.8%" height="131.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.334906305 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Touch-Bar" transform="translate(-3.000000, 8.000000)">
+        <g id="Touch-Bar" transform="translate(1.000000, 8.000000)">
             <g id="Group" transform="translate(3.000000, -8.000000)">
                 <text id="TriviaLand" font-family="AktivGrotesk-Regular, Aktiv Grotesk" font-size="48" font-weight="normal">
                     <tspan x="50" y="50" fill="#09B4CB">Trivia</tspan>
                     <tspan x="163.568" y="50" fill="#FA7D77">Land</tspan>
                 </text>
-                <circle id="Oval" fill="url(#radialGradient-1)" cx="22" cy="34" r="22"></circle>
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#radialGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
             </g>
         </g>
     </g>

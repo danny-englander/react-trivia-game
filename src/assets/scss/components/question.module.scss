@@ -7,8 +7,8 @@
 .wrap {
   display: flex;
   align-items: center;
-  border-bottom: 1px dashed $c_medium_gray;
-  padding-bottom: rem.convert(10px);
+  border-bottom: 3px dashed $c_light_teal;
+  padding-bottom: rem.convert(20px);
   margin-bottom: rem.convert(20px);
 }
 
@@ -22,6 +22,7 @@
   background-color: $c_light_teal;
   border-radius: 100%;
   padding: rem.convert(12px);
+  @include icon_shadow();
 }
 
 .iconWrap {
