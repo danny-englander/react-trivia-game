@@ -2,6 +2,7 @@
 $breakpoints: (
   small: 320px,
   medium: 740px,
+  medium_plus: 840px,
   large: 980px,
   wide: 1200px,
   ultra_wide: 1400px,
@@ -10,7 +11,6 @@ $breakpoints: (
 // Define Colors
 $c_teal: #006970;
 $c_light_teal: #aaedf6;
-$c_maroon: #55052a;
 $c_black: #2b2b2b;
 $c_white: #fff;
 $c_medium_gray: #6d6d6d;

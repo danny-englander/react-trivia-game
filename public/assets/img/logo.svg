@@ -18,7 +18,7 @@
             <g id="Group" transform="translate(3.000000, -8.000000)">
                 <text id="TriviaLand" font-family="AktivGrotesk-Regular, Aktiv Grotesk" font-size="48" font-weight="normal">
                     <tspan x="50" y="50" fill="#09B4CB">Trivia</tspan>
-                    <tspan x="163.568" y="50" fill="#FA7D77">Land</tspan>
+                    <tspan x="163.568" y="50" fill="#FF626E">Land</tspan>
                 </text>
                 <g id="Oval">
                     <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>

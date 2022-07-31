@@ -2,7 +2,7 @@
 @use "../utils" as *;
 
 .appWrap {
-  @include container(1200px);
+  @include container(1280px);
   margin-top: 80px;
 }
 

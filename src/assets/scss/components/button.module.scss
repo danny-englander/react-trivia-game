@@ -15,9 +15,12 @@
 }
 
 .primary {
+  font-size: rem.convert(19px);
   background-color: $c_light_teal;
   border: 1px solid $c_medium_gray;
   padding: rem.convert(10px 18px);
+  font-weight: 500;
+  letter-spacing: rem.convert(1px);
 }
 
 .btnDisabled {

@@ -11,6 +11,7 @@
 }
 
 .text {
+  font-size: rem.convert(20px);
   font-weight: 500;
 }
 
@@ -22,7 +23,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: rem.convert(10px);
+  margin-left: rem.convert(4px);
   font-weight: 600;
   letter-spacing: 2px;
   @include icon_shadow();

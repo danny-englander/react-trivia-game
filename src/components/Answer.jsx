@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
+import styleForm from '../assets/scss/components/form.module.scss'
 
 // Receive answer props from Question.
 const Answer = ({
@@ -23,10 +24,10 @@ const Answer = ({
 
   return (
     <>
-      <div className="form-item">
+      <div className={styleForm.answer}>
         <label
           aria-label={`Answer ${numberMapping[index]}: ${answerText}`}
-          className={`answer ${correctAnswerClass} ${wrongAnswerClass} ${disabledClass}`}
+          className={`${styleForm.label} ${correctAnswerClass} ${wrongAnswerClass} ${disabledClass}`}
         >
           <input
             type="radio"
@@ -38,8 +39,9 @@ const Answer = ({
             checked={answerText === currentAnswer}
           />
 
-          <span>{numberMapping[index]}. </span>
-          <span>{answerText}</span>
+          <span>
+            {numberMapping[index]}. {answerText}
+          </span>
         </label>
       </div>
     </>

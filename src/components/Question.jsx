@@ -41,10 +41,10 @@ const Question = ({ onChange, selectedAnswer }) => {
       {/* Start the answers form */}
       <form>
         <fieldset className={styleForm.fieldset}>
-          <legend className="visually-hidden">
-            Answers for this question:
+          <legend className={styleForm.legend}>
+            Answers for this question
           </legend>
-          <div>
+          <div className={styleForm.answers}>
             {/* Render array for each answer (map). */}
             {gameState.answers.map((answer, index) => (
               <Answer

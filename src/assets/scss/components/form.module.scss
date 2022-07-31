@@ -6,4 +6,124 @@
 
 .fieldset {
   border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.legend {
+  font-size: rem.convert(22px);
+  font-weight: 500;
+  padding-bottom: rem.convert(10px);
+}
+
+.label {
+  cursor: pointer;
+  font-size: rem.convert(20px);
+  padding: rem.convert(20px);
+  margin: rem.convert(10px);
+  font-weight: 500;
+  display: block;
+  background-color: $c_light_teal;
+}
+
+.answers {
+  @include mq.mq($from: medium_plus) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: rem.convert(-10px);
+    margin-right: rem.convert(-10px);
+  }
+}
+
+.answer {
+  @include mq.mq($from: medium_plus) {
+    width: 50%;
+  }
+}
+
+[type="radio"]:not(:checked) + span,
+[type="radio"]:checked + span {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 35px;
+  transition: 0.28s ease;
+  user-select: none;
+}
+
+[type="radio"] + span:before,
+[type="radio"] + span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 28px;
+  height: 28px;
+  z-index: 0;
+  transition: 0.28s ease;
+}
+
+[type="radio"]:not(:checked) + span:before,
+[type="radio"]:not(:checked) + span:after,
+[type="radio"]:checked + span:before,
+[type="radio"]:checked + span:after {
+  border-radius: 50%;
+}
+
+[type="radio"]:not(:checked) + span:before,
+[type="radio"]:not(:checked) + span:after {
+  border: 3px solid $c_black;
+}
+
+[type="radio"] + span:before,
+[type="radio"] + span:after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 0;
+  margin: 4px;
+  width: 28px;
+  height: 28px;
+  z-index: 0;
+  transition: 0.28s ease;
+}
+
+[type="radio"]:not(:checked) + span:before,
+[type="radio"]:not(:checked) + span:after,
+[type="radio"]:checked + span:before,
+[type="radio"]:checked + span:after {
+  border-radius: 50%;
+}
+
+[type="radio"]:not(:checked) + span:after {
+  transform: scale(0);
+}
+
+[type="radio"]:checked + span:before,
+[type="radio"]:checked + span:after {
+  border: 2px solid $c_black;
+}
+
+[type="radio"]:checked + span:after {
+  transform: scale(0.5);
+}
+
+[type="radio"]:checked + span:before,
+[type="radio"]:checked + span:after {
+  border: 2px solid $c_black;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"]:checked + span:after {
+  background-color: $c_black;
+}
+
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }

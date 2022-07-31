@@ -10,19 +10,6 @@
   padding: rem.convert(20px 50px);
   box-shadow: 0 6px 12px 4px rgba(0, 0, 0, 0.03);
   position: relative;
-
-  &:after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    background-image: url("../../../../public/assets/img/dots.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 150px;
-    height: 70px;
-    right: 20px;
-    top: 20px;
-  }
 }
 
 .logo {
