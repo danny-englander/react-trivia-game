@@ -1,10 +1,19 @@
 import React from 'react'
-import StyleHeader from '../assets/scss/components/header.module.scss'
+import styleHeader from '../assets/scss/components/header.module.scss'
 
 const Header = () => {
   return (
     <>
-      <header className="App-header">Header</header>
+      <header className={styleHeader.bg}>
+        <img
+          className={styleHeader.logo}
+          src="/assets/img/logo.svg"
+          alt="TriviaLand Trivia Game"
+          title="TriviaLand Trivia Game"
+          width="320"
+          height="76"
+        />
+      </header>
     </>
   )
 }

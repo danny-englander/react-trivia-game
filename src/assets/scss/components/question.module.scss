@@ -1,0 +1,34 @@
+@use "sass-rem" as rem;
+@use "../utils" as *;
+@use "sass-mq/mq" with (
+  $breakpoints: $breakpoints
+);
+
+.wrap {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed $c_medium_gray;
+  padding-bottom: rem.convert(10px);
+  margin-bottom: rem.convert(20px);
+}
+
+.text {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.icon {
+  fill: $c_black;
+  background-color: $c_light_teal;
+  border-radius: 100%;
+  padding: rem.convert(12px);
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 80px;
+  margin-right: rem.convert(14px);
+}

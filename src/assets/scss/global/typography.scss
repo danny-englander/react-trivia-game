@@ -7,16 +7,16 @@
 .h1,
 h1 {
   font-family: "EB Garamond", serif;
-  font-size: rem.convert(30px);
-  line-height: rem.convert(38px);
+  font-size: rem.convert(36px);
+  line-height: rem.convert(42px);
   margin-bottom: rem.convert(19px);
   letter-spacing: rem.convert(1px);
   font-weight: 400;
   margin-top: 0;
 
   @include mq.mq($from: large) {
-    font-size: rem.convert(44px);
-    line-height: rem.convert(50px);
+    font-size: rem.convert(48px);
+    line-height: rem.convert(58px);
     margin-bottom: rem.convert(26px);
   }
 }

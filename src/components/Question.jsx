@@ -2,6 +2,9 @@ import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
 import Answer from './Answer'
 import Eyebrow from './Eyebrow'
+import styleForm from '../assets/scss/components/form.module.scss'
+import styleQuestion from '../assets/scss/components/question.module.scss'
+import { BsQuestionLg } from 'react-icons/bs'
 
 // Receive props from Game.
 const Question = ({ onChange, selectedAnswer }) => {
@@ -15,8 +18,18 @@ const Question = ({ onChange, selectedAnswer }) => {
     <>
       <Eyebrow gameState={gameState} />
 
-      {/* Game question */}
-      <h1 className="question">{currentQuestion.question}</h1>
+      <div className={styleQuestion.wrap}>
+        <div className={styleQuestion.iconWrap}>
+          {/* Question icon */}
+          <BsQuestionLg
+            title="Question"
+            size="4em"
+            className={styleQuestion.icon}
+          />
+        </div>
+        {/* Game question */}
+        <h1 className={styleQuestion.text}>{currentQuestion.question}</h1>
+      </div>
 
       {/* If gameState.resultsMessage, show the results message and score. */}
       {gameState.resultsMessage && (
@@ -27,7 +40,7 @@ const Question = ({ onChange, selectedAnswer }) => {
 
       {/* Start the answers form */}
       <form>
-        <fieldset>
+        <fieldset className={styleForm.fieldset}>
           <legend className="visually-hidden">
             Answers for this question:
           </legend>

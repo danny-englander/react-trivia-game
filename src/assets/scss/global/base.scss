@@ -3,7 +3,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: rem.convert(18px);
+  font-size: rem.convert(16px);
 }
 
 *,
@@ -13,6 +13,10 @@ html {
 }
 
 body {
+  font-size: 100%;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  color: $c_black;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

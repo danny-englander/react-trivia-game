@@ -1,0 +1,12 @@
+@use "sass-rem" as rem;
+@use "../utils" as *;
+@use "sass-mq/mq" with (
+  $breakpoints: $breakpoints
+);
+
+.bg {
+  border-bottom-left-radius: rem.convert(20px);
+  border-bottom-right-radius: rem.convert(20px);
+  padding: rem.convert(20px 50px);
+  box-shadow: 0 -4px 12px 4px rgba(0, 0, 0, 0.03);
+}

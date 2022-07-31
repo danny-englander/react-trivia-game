@@ -1,0 +1,9 @@
+@use "sass-rem" as rem;
+@use "../utils" as *;
+@use "sass-mq/mq" with (
+  $breakpoints: $breakpoints
+);
+
+.fieldset {
+  border: 0;
+}

@@ -1,9 +1,10 @@
 import React from 'react'
+import styleFooter from '../assets/scss/components/footer.module.scss'
 
 const Footer = () => {
   return (
     <>
-      <footer className="App-footer">Footer</footer>
+      <footer className={styleFooter.bg}>Footer</footer>
     </>
   )
 }

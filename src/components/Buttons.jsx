@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
-import StyleButton from '../assets/scss/components/button.module.scss'
+import styleButton from '../assets/scss/components/button.module.scss'
 
 const Buttons = ({ onLockClick }) => {
   const [gameState, dispatch] = useContext(GameContext)
   return (
-    <>
+    <div className={styleButton.wrap}>
       {/* Enable disable buttons below with conditions and add accessibility. */}
       {/*
        *** Lock answer button.
@@ -14,7 +14,7 @@ const Buttons = ({ onLockClick }) => {
         disabled={gameState.answerLocked === true}
         aria-disabled={gameState.answerLocked === true}
         onClick={onLockClick}
-        className={`btn-state ${StyleButton.btn} ${
+        className={`btn-state ${styleButton.primary} ${
           gameState.answerLocked === true ? 'foo' : 'bar'
         }`}
       >
@@ -32,7 +32,7 @@ const Buttons = ({ onLockClick }) => {
       >
         Next question
       </button>
-    </>
+    </div>
   )
 }
 
