@@ -4,23 +4,25 @@
   $breakpoints: $breakpoints
 );
 
-// body {
-//   @include mq.mq($from: wide) {
-//     background: rgb(144, 0, 255);
-//   }
-// }
-
 .wrap {
   padding: rem.convert(20px 0);
 }
 
-.primary {
-  font-size: rem.convert(19px);
-  background-color: $c_light_teal;
-  border: 1px solid $c_medium_gray;
-  padding: rem.convert(10px 18px);
+.btn {
+  font-size: rem.convert(20px);
   font-weight: 500;
   letter-spacing: rem.convert(1px);
+  padding: rem.convert(10px 24px);
+  border: 2px solid $c_black;
+  margin-right: rem.convert(20px);
+}
+
+.btnPrimary {
+  background-color: $c_light_teal;
+}
+
+.btnSecondary {
+  background-color: $c_orange;
 }
 
 .btnDisabled {

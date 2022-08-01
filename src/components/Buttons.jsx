@@ -14,7 +14,7 @@ const Buttons = ({ onLockClick }) => {
         disabled={gameState.answerLocked === true}
         aria-disabled={gameState.answerLocked === true}
         onClick={onLockClick}
-        className={`btn-state ${styleButton.primary} ${
+        className={`${styleButton.btn} ${styleButton.btnPrimary} ${
           gameState.answerLocked === true ? 'foo' : 'bar'
         }`}
       >
@@ -27,6 +27,9 @@ const Buttons = ({ onLockClick }) => {
       <button
         disabled={gameState.answerLocked === false}
         aria-disabled={gameState.answerLocked === false}
+        className={`${styleButton.btn} ${styleButton.btnSecondary} ${
+          gameState.answerLocked === true ? 'foo' : 'bar'
+        }`}
         // aria-describedby={}
         onClick={() => dispatch({ type: 'NEXT_QUESTION' })}
       >
