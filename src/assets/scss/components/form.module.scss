@@ -24,6 +24,17 @@
   font-weight: 500;
   display: block;
   background-color: $c_light_teal;
+  border: 2px dotted transparent;
+
+  &:focus,
+  &:focus-within {
+    border: 2px dotted #333;
+
+    [type="radio"] + span:after,
+    [type="radio"] + span:before {
+      box-shadow: 0 0 0 6px rgb(52 52 52);
+    }
+  }
 }
 
 .answers {
@@ -44,7 +55,7 @@
 [type="radio"]:not(:checked) + span,
 [type="radio"]:checked + span {
   position: relative;
-  padding-left: 35px;
+  padding-left: 40px;
   cursor: pointer;
   display: inline-block;
   height: 25px;
@@ -104,16 +115,11 @@
 
 [type="radio"]:checked + span:before,
 [type="radio"]:checked + span:after {
-  border: 2px solid $c_black;
+  border: 1px solid $c_black;
 }
 
 [type="radio"]:checked + span:after {
   transform: scale(0.5);
-}
-
-[type="radio"]:checked + span:before,
-[type="radio"]:checked + span:after {
-  border: 2px solid $c_black;
 }
 
 [type="radio"]:checked + span:after,

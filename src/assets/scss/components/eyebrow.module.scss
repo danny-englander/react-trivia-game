@@ -28,4 +28,5 @@
   font-weight: 600;
   letter-spacing: 2px;
   @include icon_shadow();
+  font-size: rem.convert(19px);
 }

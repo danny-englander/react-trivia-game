@@ -27,7 +27,11 @@ const Answer = ({
       <div className={styleForm.answer}>
         <label
           aria-label={`Answer ${numberMapping[index]}: ${answerText}`}
-          className={`${styleForm.label} ${correctAnswerClass} ${wrongAnswerClass} ${disabledClass}`}
+          className={`${styleForm.label} ${
+            gameState.answerLocked === true
+              ? `${correctAnswerClass} ${wrongAnswerClass} ${disabledClass}`
+              : ''
+          }`}
         >
           <input
             type="radio"
