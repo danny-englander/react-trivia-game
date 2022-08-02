@@ -11,7 +11,7 @@ import { shuffleAnswers } from "../utils/helpers";
 const initialState = {
   currentQuestionIndex: 0,
   questions,
-  showResults: false,
+  showResultsPage: false,
   answers: shuffleAnswers(questions[0]),
   currentAnswer: "",
   correctAnswersCount: 0,
@@ -54,20 +54,20 @@ const reducer = (state, action) => {
 
     case "NEXT_QUESTION": {
       // Define a state that tests for the end of the game so we can go to the results page.
-      const showResults =
+      const showResultsPage =
         state.currentQuestionIndex === state.questions.length - 1;
       // Test for the next question, increment by 1 for each question.
-      const currentQuestionIndex = showResults
+      const currentQuestionIndex = showResultsPage
         ? state.currentQuestionIndex
         : state.currentQuestionIndex + 1;
       // Shuffled answers.
-      const answers = showResults
+      const answers = showResultsPage
         ? []
         : shuffleAnswers(state.questions[currentQuestionIndex]);
       return {
         ...state,
         currentQuestionIndex,
-        showResults,
+        showResultsPage,
         answers,
         currentAnswer: "",
         answerLocked: false,

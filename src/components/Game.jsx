@@ -41,11 +41,11 @@ const Game = () => {
 
   return (
     <>
-      {/* If showResults is true (last question), go to the results page. */}
-      {gameState.showResults && <Results />}
+      {/* If showResultsPage is true (last question), go to the results page. */}
+      {gameState.showResultsPage && <Results />}
 
-      {/* If showResults is false, show questions. */}
-      {!gameState.showResults && (
+      {/* If showResultsPage is false, show questions. */}
+      {!gameState.showResultsPage && (
         <>
           {/* Question component, pass props into component. */}
           <Question
