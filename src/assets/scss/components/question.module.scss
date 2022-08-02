@@ -41,4 +41,5 @@
   margin-top: 40px;
   border-radius: 16px;
   @include icon_shadow();
+  border: 3px dotted $c_black;
 }

@@ -10,6 +10,7 @@ const Game = () => {
   // Define a local state for the selected answer.
   // This helps keep track of the answer in a local state.
   const [selectedAnswer, setSelectedAnswer] = useState('')
+  const [formValidationMessage, setFormValidationMessage] = useState('')
   // Custom onchange for input click event.
   // (For prop - onSelectAnswer).
   // This just keeps track of what the user clicked on in a local state
@@ -17,14 +18,25 @@ const Game = () => {
   const onChange = (e) => {
     console.log('input target', e.target.value)
     setSelectedAnswer(e.target.value)
+    setFormValidationMessage('')
   }
 
-  // A sort of submit button to lock answer and finalize the answer
-  const onLockClick = (e) => {
+  // A sort of submit button to lock answer and finalize the answer.
+  // Local state that keeps track
+  const onLockClick = () => {
     console.log('onLockClick selectedAnswer', selectedAnswer)
+    if (selectedAnswer === '') {
+      setFormValidationMessage('Please choose an answer')
+      return
+    }
     dispatch({ type: 'SELECT_ANSWER', payload: selectedAnswer })
   }
 
+  // We need to reset the form state for the next question.
+  const onNextClick = () => {
+    dispatch({ type: 'NEXT_QUESTION' })
+    setSelectedAnswer('')
+  }
   console.log('gameState in Game.jsx', gameState)
 
   return (
@@ -41,8 +53,12 @@ const Game = () => {
             onLockClick={onLockClick}
             selectedAnswer={selectedAnswer}
           />
+
+          {/* Form validation  */}
+          <p>{formValidationMessage}</p>
+
           {/* Buttons */}
-          <Buttons onLockClick={onLockClick} />
+          <Buttons onLockClick={onLockClick} onNextClick={onNextClick} />
         </>
       )}
     </>
