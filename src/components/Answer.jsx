@@ -42,10 +42,17 @@ const Answer = ({
             onChange={onSelectAnswer}
             checked={answerText === currentAnswer}
           />
-
           <span>
             {numberMapping[index]}. {answerText}
           </span>
+
+          {gameState.answerLocked === true && isCorrectAnswer && (
+            <span>correct icon</span>
+          )}
+
+          {gameState.answerLocked === true && !isCorrectAnswer && (
+            <span>incorrect icon</span>
+          )}
         </label>
       </div>
     </>

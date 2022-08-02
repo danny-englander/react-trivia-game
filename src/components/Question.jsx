@@ -33,7 +33,11 @@ const Question = ({ onChange, selectedAnswer }) => {
 
       {/* If gameState.resultsMessage, show the results message and score. */}
       {gameState.resultsMessage && (
-        <div aria-live="assertive" role="alert">
+        <div
+          className={styleQuestion.message}
+          aria-live="assertive"
+          role="alert"
+        >
           <h2>{gameState.resultsMessage}</h2>
         </div>
       )}

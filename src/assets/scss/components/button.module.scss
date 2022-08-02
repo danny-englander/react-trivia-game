@@ -13,8 +13,13 @@
   font-weight: 500;
   letter-spacing: rem.convert(1px);
   padding: rem.convert(10px 24px);
-  border: 2px solid $c_black;
+  border: 3px solid $c_black;
   margin-right: rem.convert(20px);
+
+  &:focus,
+  &:focus-within {
+    border: 3px dotted $c_black;
+  }
 }
 
 .btnPrimary {

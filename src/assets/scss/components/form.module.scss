@@ -24,11 +24,11 @@
   font-weight: 500;
   display: block;
   background-color: $c_light_teal;
-  border: 2px dotted transparent;
+  border: 3px dotted transparent;
 
   &:focus,
   &:focus-within {
-    border: 2px dotted #333;
+    border: 3px dotted $c_black;
 
     [type="radio"] + span:after,
     [type="radio"] + span:before {

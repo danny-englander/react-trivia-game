@@ -33,3 +33,12 @@
   height: 80px;
   margin-right: rem.convert(14px);
 }
+
+.message {
+  background-color: $c_light_gray;
+  padding: rem.convert(6px 20px);
+  margin-bottom: 40px;
+  margin-top: 40px;
+  border-radius: 16px;
+  @include icon_shadow();
+}
