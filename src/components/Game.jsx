@@ -53,9 +53,8 @@ const Game = () => {
             onLockClick={onLockClick}
             selectedAnswer={selectedAnswer}
           />
-
           {/* Form validation  */}
-          <p>{formValidationMessage}</p>
+          {formValidationMessage && <p>{formValidationMessage}</p>}
 
           {/* Buttons */}
           <Buttons onLockClick={onLockClick} onNextClick={onNextClick} />
