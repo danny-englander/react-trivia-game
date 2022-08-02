@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { GameContext } from '../contexts/GameContext'
 import Question from './Question'
 import Results from './Results'
-import Buttons from './Buttons'
+import FormActions from './FormActions'
 
 const Game = () => {
   const [gameState, dispatch] = useContext(GameContext)
@@ -22,11 +22,11 @@ const Game = () => {
   }
 
   // A sort of submit button to lock answer and finalize the answer.
-  // Local state that keeps track
+  // Local state that keeps track.
   const onLockClick = () => {
     console.log('onLockClick selectedAnswer', selectedAnswer)
     if (selectedAnswer === '') {
-      setFormValidationMessage('Please choose an answer')
+      setFormValidationMessage('Please choose an answer above')
       return
     }
     dispatch({ type: 'SELECT_ANSWER', payload: selectedAnswer })
@@ -53,11 +53,13 @@ const Game = () => {
             onLockClick={onLockClick}
             selectedAnswer={selectedAnswer}
           />
-          {/* Form validation  */}
-          {formValidationMessage && <p>{formValidationMessage}</p>}
 
           {/* Buttons */}
-          <Buttons onLockClick={onLockClick} onNextClick={onNextClick} />
+          <FormActions
+            onLockClick={onLockClick}
+            onNextClick={onNextClick}
+            formValidationMessage={formValidationMessage}
+          />
         </>
       )}
     </>

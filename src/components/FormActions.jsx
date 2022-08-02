@@ -1,20 +1,23 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
-import styleButton from '../assets/scss/components/button.module.scss'
+import styleFormActions from '../assets/scss/components/form-actions.module.scss'
 
-const Buttons = ({ onLockClick, onNextClick }) => {
+const FormActions = ({ onLockClick, onNextClick, formValidationMessage }) => {
   const [gameState] = useContext(GameContext)
   return (
-    <div className={styleButton.wrap}>
+    <div className={styleFormActions.wrap}>
       {/* Enable disable buttons below with conditions and add accessibility. */}
       {/*
        *** Lock answer button.
        */}
+      {/* Form validation  */}
+      {formValidationMessage && <p className="">{formValidationMessage}</p>}
+
       <button
         disabled={gameState.answerLocked === true}
         aria-disabled={gameState.answerLocked === true}
         onClick={onLockClick}
-        className={`${styleButton.btn} ${styleButton.btnPrimary} ${
+        className={`${styleFormActions.btn} ${styleFormActions.btnPrimary} ${
           gameState.answerLocked === true ? 'foo' : 'bar'
         }`}
       >
@@ -27,7 +30,7 @@ const Buttons = ({ onLockClick, onNextClick }) => {
       <button
         disabled={gameState.answerLocked === false}
         aria-disabled={gameState.answerLocked === false}
-        className={`${styleButton.btn} ${styleButton.btnSecondary} ${
+        className={`${styleFormActions.btn} ${styleFormActions.btnSecondary} ${
           gameState.answerLocked === true ? 'foo' : 'bar'
         }`}
         // aria-describedby={}
@@ -41,4 +44,4 @@ const Buttons = ({ onLockClick, onNextClick }) => {
   )
 }
 
-export default Buttons
+export default FormActions
