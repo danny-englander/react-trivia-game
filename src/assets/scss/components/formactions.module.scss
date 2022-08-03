@@ -1,0 +1,68 @@
+@use "sass-rem" as rem;
+@use "../utils" as *;
+@use "sass-mq/mq" with (
+  $breakpoints: $breakpoints
+);
+
+.btnItems {
+  padding: rem.convert(20px 0);
+  display: flex;
+}
+
+.btnItem {
+  position: relative;
+  margin-right: rem.convert(20px);
+}
+
+.btn {
+  font-size: rem.convert(20px);
+  font-weight: 500;
+  letter-spacing: rem.convert(1px);
+  padding: rem.convert(10px 24px);
+  border: 3px solid $c_black;
+
+  &:hover {
+    border: 3px dotted $c_black;
+
+    + .tipWrap {
+      visibility: visible;
+    }
+  }
+
+  &:focus,
+  &:focus-within {
+    border: 3px dotted $c_black;
+  }
+}
+
+.btnPrimary {
+  background-color: $c_light_teal;
+}
+
+.btnSecondary {
+  background-color: $c_orange;
+}
+
+.btnDisabled {
+  pointer-events: none;
+  cursor: not-allowed;
+
+  &:hover {
+    pointer-events: all;
+    cursor: pointer;
+  }
+}
+
+.tipWrap {
+  position: absolute;
+  width: 280px;
+  background-color: $c_dark_gray;
+  bottom: 70px;
+  padding: rem.convert(10px 18px 2px 18px);
+  color: $c_white;
+  left: 0;
+  visibility: hidden;
+}
+
+.tip {
+}
