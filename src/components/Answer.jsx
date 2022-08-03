@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
 import styleForm from '../assets/scss/components/form.module.scss'
+import { IoCheckmarkCircle } from 'react-icons/io5'
+import { AiFillCloseCircle } from 'react-icons/ai'
 
 // Receive answer props from Question.
 const Answer = ({
@@ -47,11 +49,11 @@ const Answer = ({
           </span>
 
           {gameState.answerLocked === true && isCorrectAnswer && (
-            <span>correct icon</span>
+            <IoCheckmarkCircle className="" />
           )}
 
           {gameState.answerLocked === true && !isCorrectAnswer && (
-            <span>incorrect icon</span>
+            <AiFillCloseCircle />
           )}
         </label>
       </div>

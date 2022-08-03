@@ -10,3 +10,27 @@
   padding: rem.convert(20px 50px);
   box-shadow: 0 -4px 12px 4px rgba(0, 0, 0, 0.03);
 }
+
+.colWrap {
+  @include mq.mq($from: medium_plus) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 10px;
+  }
+
+  a {
+    color: $c_teal;
+
+    #{$a-tags-hover} {
+      text-decoration: none;
+    }
+  }
+}
