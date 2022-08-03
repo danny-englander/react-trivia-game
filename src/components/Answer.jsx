@@ -49,11 +49,19 @@ const Answer = ({
           </span>
 
           {gameState.answerLocked === true && isCorrectAnswer && (
-            <IoCheckmarkCircle className="" />
+            <IoCheckmarkCircle
+              name="Correct Icon"
+              size="1.6em"
+              className={styleForm.icon}
+            />
           )}
 
           {gameState.answerLocked === true && !isCorrectAnswer && (
-            <AiFillCloseCircle />
+            <AiFillCloseCircle
+              name="Incorrect Icon"
+              size="1.6em"
+              className={styleForm.icon}
+            />
           )}
         </label>
       </div>

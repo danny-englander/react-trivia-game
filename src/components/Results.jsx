@@ -1,15 +1,18 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../contexts/GameContext'
+import styleFormActions from '../assets/scss/components/formactions.module.scss'
 
 const Results = () => {
   const [gameState, dispatch] = useContext(GameContext)
   return (
     <>
-      <h1 className="">Congratulations, you have completed the quiz!</h1>
+      <h1>Congratulations, you have completed the game!</h1>
 
       <div>
-        You got {gameState.correctAnswersCount} of {gameState.questions.length}
-        questions correct.
+        <h2>
+          You got {gameState.correctAnswersCount} of{' '}
+          {gameState.questions.length} questions correct.
+        </h2>
       </div>
 
       {/*
@@ -17,10 +20,10 @@ const Results = () => {
        * Call the state as defined above.
        */}
       <button
-        className="next-button"
+        className={`${styleFormActions.btn} ${styleFormActions.btnPrimary}`}
         onClick={() => dispatch({ type: 'RESTART_GAME' })}
       >
-        Restart the Game
+        Play Again!
       </button>
     </>
   )

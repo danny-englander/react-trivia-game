@@ -35,6 +35,22 @@ const Footer = () => {
                 Github Project
               </a>
             </p>
+            <p className={styleFooter.item}>
+              <a
+                href="https://www.w3.org/WAI/WCAG2AAA-Conformance"
+                title="Explanation of WCAG 2 Level AAA conformance"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  width="130"
+                  height="45"
+                  src="/assets/img/wcag2.1AAA-v.svg"
+                  alt="Level AAA conformance,
+            W3C WAI Web Content Accessibility Guidelines 2.1"
+                />
+              </a>
+            </p>
           </div>
 
           <div className={styleFooter.cols}>
