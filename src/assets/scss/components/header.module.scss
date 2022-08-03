@@ -13,6 +13,11 @@
 }
 
 .logo {
-  width: 320px;
-  height: 76px;
+  width: 96%;
+  height: auto;
+
+  @include mq.mq($from: small_plus) {
+    width: 320px;
+    height: 76px;
+  }
 }

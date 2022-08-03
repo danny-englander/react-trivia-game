@@ -5,9 +5,17 @@
 );
 
 .wrap {
-  display: flex;
-  justify-content: space-between;
   margin: rem.convert(20px 0 30px 0);
+  display: flex;
+
+  @include mq.mq($until: small_plus) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include mq.mq($from: small_plus) {
+    justify-content: space-between;
+  }
 }
 
 .text {
@@ -29,4 +37,10 @@
   letter-spacing: 2px;
   @include icon_shadow();
   font-size: rem.convert(19px);
+}
+
+.question {
+  @include mq.mq($until: small_plus) {
+    margin-bottom: rem.convert(20px);
+  }
 }

@@ -15,6 +15,10 @@
 .btnItem {
   position: relative;
   margin-right: rem.convert(20px);
+
+  @include mq.mq($until: medium) {
+    margin-bottom: 20px;
+  }
 }
 
 .btn {
