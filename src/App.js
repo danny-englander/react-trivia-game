@@ -6,13 +6,13 @@ import Footer from './components/Footer';
 import 'normalize-css'
 import './assets/scss/global-styles.scss'
 import styleContainer from './assets/scss/components/container.module.scss'
+import styleSR from './assets/scss/components/sr.module.scss'
 
 function App() {
   return (
     <>
-
-      <div className=''>
-        <a id='skip-nav' className='screenreader-text' href='#main-content'>
+      <div className={styleSR.srWrap}>
+        <a id='skip-nav' className={styleSR.srText} href='#main-content'>
           Skip Navigation or Skip to Content
         </a>
       </div>

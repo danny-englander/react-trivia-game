@@ -7,7 +7,9 @@ const Eyebrow = ({ gameState }) => {
       <div className={StyleEyebrow.wrap}>
         {/* Question number, e.g. 1/8 */}
         <div
+          id="eyebrow-question"
           tabIndex="0"
+          role="definition"
           aria-label={`Question ${gameState.currentQuestionIndex + 1} of ${
             gameState.questions.length
           }`}
@@ -21,7 +23,9 @@ const Eyebrow = ({ gameState }) => {
 
         {/* Game score, e.g. 1/8 */}
         <div
+          id="eyebrow-score"
           tabIndex="0"
+          role="definition"
           aria-label={`Score ${gameState.correctAnswersCount} points`}
           className={StyleEyebrow.score}
         >

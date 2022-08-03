@@ -1,0 +1,25 @@
+@use "sass-rem" as rem;
+@use "../utils" as *;
+
+.srText {
+  position: absolute;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+
+  &:focus {
+    font-size: rem.convert(20px);
+    font-weight: 500;
+    text-align: center;
+    color: $c_black;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    position: static;
+    margin: auto;
+    padding: 16px;
+    background-color: $c_light_teal;
+    width: 100%;
+  }
+}

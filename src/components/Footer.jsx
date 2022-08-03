@@ -12,7 +12,10 @@ const Footer = () => {
         <div className={styleFooter.colWrap}>
           <div className={styleFooter.cols}>
             <p className={styleFooter.item}>
-              <FaReact size="2em" />
+              <FaReact
+                size="2em"
+                title="Game Engineering & Design by Danny Englander"
+              />
               <a
                 href="https://www.dannyenglander.com"
                 target="_blank"
@@ -23,7 +26,7 @@ const Footer = () => {
             </p>
 
             <p className={styleFooter.item}>
-              <DiGithubAlt size="2.3em" />
+              <DiGithubAlt size="2.3em" title="Github Project" />
               <a
                 href="https://github.com/danny-englander/react-trivia-game"
                 target="_blank"
@@ -36,7 +39,7 @@ const Footer = () => {
 
           <div className={styleFooter.cols}>
             <p className={styleFooter.item}>
-              <FiCodesandbox size="2em" />
+              <FiCodesandbox size="2em" title="Deployed on CodeSandbox" />
               <a
                 href="https://codesandbox.io/s/github/danny-englander/dannys-trivia-game"
                 target="_blank"
@@ -46,7 +49,7 @@ const Footer = () => {
               </a>
             </p>
             <p className={styleFooter.item}>
-              <SiNetlify size="2em" />
+              <SiNetlify size="2em" title="Deployed on Netlify" />
               <a
                 href="https://trivia-land.netlify.app/"
                 target="_blank"
