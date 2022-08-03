@@ -1,9 +1,18 @@
 @use "sass-rem" as rem;
 @use "../utils" as *;
+@use "sass-mq/mq" with (
+  $breakpoints: $breakpoints
+);
 
 .appWrap {
   @include container(1280px);
   margin-top: 80px;
+  overflow-x: hidden;
+
+  @include mq.mq($from: small_plus) {
+    padding-left: rem.convert(50px);
+    padding-right: rem.convert(50px);
+  }
 }
 
 .appInner {
