@@ -6,7 +6,10 @@
 
 .btnItems {
   padding: rem.convert(20px 0);
-  display: flex;
+
+  @include mq.mq($from: medium) {
+    display: flex;
+  }
 }
 
 .btnItem {
