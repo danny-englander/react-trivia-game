@@ -28,9 +28,17 @@
 
   a {
     color: $c_teal;
+    font-weight: 500;
+    border: 3px dotted transparent;
+    padding: rem.convert(2px 6px);
 
     #{$a-tags-hover} {
       text-decoration: none;
+    }
+
+    &:focus {
+      border: 3px dotted $c_black;
+      outline: none;
     }
   }
 }
