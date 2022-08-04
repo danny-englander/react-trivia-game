@@ -3,7 +3,7 @@ import styleFooter from '../assets/scss/components/footer.module.scss'
 import { FaReact } from 'react-icons/fa'
 import { DiGithubAlt } from 'react-icons/di'
 import { FiCodesandbox } from 'react-icons/fi'
-import { SiNetlify } from 'react-icons/si'
+import { SiNetlify, SiW3C } from 'react-icons/si'
 
 const Footer = () => {
   return (
@@ -26,29 +26,16 @@ const Footer = () => {
             </p>
 
             <p className={styleFooter.item}>
-              <DiGithubAlt size="2.3em" title="Github Project" />
-              <a
-                href="https://github.com/danny-englander/react-trivia-game"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Github Project
-              </a>
-            </p>
-            <p className={styleFooter.item}>
+              <SiW3C size="2.3em" title="Github Project" />
               <a
                 href="https://www.w3.org/WAI/WCAG2AAA-Conformance"
                 title="Explanation of WCAG 2 Level AAA conformance"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  width="130"
-                  height="45"
-                  src="/assets/img/wcag2.1AAA-v.svg"
-                  alt="Level AAA conformance,
-            W3C WAI Web Content Accessibility Guidelines 2.1"
-                />
+                Level AAA conformance, W3C WAI
+                <br />
+                Web Content Accessibility Guidelines 2.1
               </a>
             </p>
           </div>
@@ -72,6 +59,17 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 Deployed on Netlify
+              </a>
+            </p>
+
+            <p className={styleFooter.item}>
+              <DiGithubAlt size="2.3em" title="Github Project" />
+              <a
+                href="https://github.com/danny-englander/react-trivia-game"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github Project
               </a>
             </p>
           </div>
