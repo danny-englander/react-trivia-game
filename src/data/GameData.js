@@ -14,6 +14,45 @@ const questionData = [
   },
 
   {
+    dataID: "1",
+    dataMultiple: "false",
+    question: "Which of the following is not a Flintstones character?",
+    incorrectAnswers: [
+      "Rockhead Slate",
+      "The Great Gazoo",
+      "Barney Rubble"
+    ],
+    correctAnswer: "Astro the Dog",
+    dataBG: "foo_icon"
+  },
+
+  {
+    dataID: "1",
+    dataMultiple: "false",
+    question: "Which of the following is NOT a work done by Shakespeare?",
+    incorrectAnswers: [
+      "Measure For Measure",
+      "Titus Andronicus",
+      "Cymbeline"
+    ],
+    correctAnswer: "Trial of Temperance",
+    dataBG: "foo_icon"
+  },
+
+  {
+    dataID: "1",
+    dataMultiple: "false",
+    question: "In Battlestar Galactica (2004), what is the name of the President of the Twelve Colonies?",
+    incorrectAnswers: [
+      "William Adama",
+      "Tricia Helfer",
+      "Harry Stills"
+    ],
+    correctAnswer: "Laura Roslin",
+    dataBG: "foo_icon"
+  },
+
+  {
     dataID: "2",
     dataMultiple: "false",
     question: "The asteroid belt is located between which two planets?",
@@ -25,6 +64,20 @@ const questionData = [
     ],
     dataBG: ""
   },
+
+  {
+    dataID: "2",
+    dataMultiple: "false",
+    question: "In the 1976 film, Network, which character yelled out a window, \"I'm mad as hell and I'm not going to take this anymore\" ",
+    correctAnswer: "Howard Beale",
+    incorrectAnswers: [
+      "Max Schumacher",
+      "Diana Christensen",
+      "Frank Hackett"
+    ],
+    dataBG: ""
+  },
+
   {
     dataID: "3",
     dataMultiple: "false",
