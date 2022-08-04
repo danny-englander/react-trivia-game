@@ -25,12 +25,14 @@ const Game = () => {
   // Local state that keeps track.
   const onLockClick = () => {
     console.log('onLockClick selectedAnswer', selectedAnswer)
+    // If no answer has been selected, set a form validation message.
     if (selectedAnswer === '') {
       setFormValidationMessage(
         'Please choose an answer from the choices above.',
       )
       return
     }
+    // Otherwise, dispatch and show the correct answer once the answers are locked in.
     dispatch({ type: 'SELECT_ANSWER', payload: selectedAnswer })
   }
 
