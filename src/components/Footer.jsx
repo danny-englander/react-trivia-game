@@ -12,10 +12,7 @@ const Footer = () => {
         <div className={styleFooter.colWrap}>
           <div className={styleFooter.cols}>
             <p className={styleFooter.item}>
-              <FaReact
-                size="2em"
-                title="Game Engineering & Design by Danny Englander"
-              />
+              <FaReact size="2em" title="React.js icon" />
               <a
                 href="https://www.dannyenglander.com"
                 target="_blank"
@@ -26,7 +23,7 @@ const Footer = () => {
             </p>
 
             <p className={styleFooter.item}>
-              <SiW3C size="2.3em" title="Github Project" />
+              <SiW3C size="2.3em" title="W3C Icon" />
               <a
                 href="https://www.w3.org/WAI/WCAG2AAA-Conformance"
                 title="Explanation of WCAG 2 Level AAA conformance"
@@ -42,7 +39,7 @@ const Footer = () => {
 
           <div className={styleFooter.cols}>
             <p className={styleFooter.item}>
-              <FiCodesandbox size="2em" title="Deployed on CodeSandbox" />
+              <FiCodesandbox size="2em" title="CodeSandbox icon" />
               <a
                 href="https://codesandbox.io/s/github/danny-englander/dannys-trivia-game"
                 target="_blank"
@@ -52,7 +49,7 @@ const Footer = () => {
               </a>
             </p>
             <p className={styleFooter.item}>
-              <SiNetlify size="2em" title="Deployed on Netlify" />
+              <SiNetlify size="2em" title="Netlify app icon" />
               <a
                 href="https://trivia-land.netlify.app/"
                 target="_blank"
@@ -63,7 +60,7 @@ const Footer = () => {
             </p>
 
             <p className={styleFooter.item}>
-              <DiGithubAlt size="2.3em" title="Github Project" />
+              <DiGithubAlt size="2.3em" title="Github icon" />
               <a
                 href="https://github.com/danny-englander/react-trivia-game"
                 target="_blank"
