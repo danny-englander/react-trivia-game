@@ -1,4 +1,4 @@
-# TriviaLand, an accessible React Trivia Game
+# TriviaLand, an accessible React.js trivia game
 
 TriviaLand is a `create-react-app` using React 18 that tests a user on their trivia knowledge through a series of 8 questions.
 
@@ -28,9 +28,9 @@ For example, in `Game.jsx`, I define a variable called `onLockClick` which is a 
 For the design, I wanted something fresh and modern looking so I went to Dribble for inspiration and found plenty. In addition, I downloaded some modern abstract images from Envato elements that I thought would fit in nicely.
 
 ## Styling / theming
-For theming and styling, I use [React CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet) implemented via Sass and the newest version of React scripts for compiling along with a few global styles. I am also using [React icons](https://react-icons.github.io/react-icons/)
+For theming and styling, I use [React CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet) implemented via Sass and the newest version of React scripts for compiling along with a few global styles. I am also using [React icons](https://react-icons.github.io/react-icons/) which I really love!
 
-CSS module classes are namespaced in JSX files with "style..." so that the classes are differentiated from variables, for example, `className={styleFormActions.warning}`. The module is imported like this:
+CSS module classes are namespaced in JSX files with "style..." so that the classes are differentiated from variables, for example, `className={styleFormActions.warning}`. A CSS module file is imported like the example below, the sass is instantly compiled to CSS when during NPM runtime.
 
 ```javascript
 import styleFormActions from '../assets/scss/components/formactions.module.scss'
@@ -46,3 +46,11 @@ If you'd like to run this app locally, follow the steps below:
 
 ## Demo
 This app is deployed on [CodeSandbox](https://codesandbox.io/s/github/danny-englander/dannys-trivia-game) as well as on [Netlify](https://trivia-land.netlify.app/).
+
+## Roadmap
+* Allow for multiple answers to some questions
+* Implement a splash screen to start off the game
+* Make improvements based on peer feedback
+* Keep track of a user's scores, add something like, "your highest score so far is..."
+* Randomize questions
+* Hook up a trivia API
