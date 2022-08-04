@@ -48,6 +48,8 @@ If you'd like to run this app locally, follow the steps below:
 This app is deployed on [CodeSandbox](https://codesandbox.io/s/github/danny-englander/dannys-trivia-game) as well as on [Netlify](https://trivia-land.netlify.app/).
 
 ## Roadmap
+* Fix tabbing bug so that the tabindex goes back to the beginning on the next screen or even better, to the beginning
+of the form. probably React's `useRef` might come in handy for this.
 * Allow for multiple answers to some questions
 * Implement a splash screen to start off the game
 * Make improvements based on peer feedback
