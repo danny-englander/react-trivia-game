@@ -20,11 +20,19 @@
   cursor: pointer;
   font-size: rem.convert(20px);
   padding: rem.convert(20px);
-  margin: rem.convert(10px);
+
   font-weight: 500;
   display: block;
   background-color: $c_light_teal;
   border: 3px dotted transparent;
+
+  @include mq.mq($until: medium) {
+    margin-bottom: rem.convert(16px);
+  }
+
+  @include mq.mq($from: medium) {
+    margin: rem.convert(10px);
+  }
 
   &:focus,
   &:focus-within {

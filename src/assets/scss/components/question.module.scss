@@ -10,6 +10,11 @@
   border-bottom: 3px dashed $c_light_teal;
   padding-bottom: rem.convert(20px);
   margin-bottom: rem.convert(20px);
+  flex-direction: column;
+
+  @include mq.mq($from: medium) {
+    flex-direction: row;
+  }
 }
 
 .text {

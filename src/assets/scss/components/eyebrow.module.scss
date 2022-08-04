@@ -13,6 +13,11 @@
     align-items: center;
   }
 
+  @include mq.mq($until: medium) {
+    border-bottom: 3px dashed $c_orange;
+    padding-bottom: rem.convert(20px);
+  }
+
   @include mq.mq($from: small_plus) {
     justify-content: space-between;
   }
