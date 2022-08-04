@@ -26,7 +26,9 @@ const Game = () => {
   const onLockClick = () => {
     console.log('onLockClick selectedAnswer', selectedAnswer)
     if (selectedAnswer === '') {
-      setFormValidationMessage('Please choose an answer above')
+      setFormValidationMessage(
+        'Please choose an answer from the choices above.',
+      )
       return
     }
     dispatch({ type: 'SELECT_ANSWER', payload: selectedAnswer })

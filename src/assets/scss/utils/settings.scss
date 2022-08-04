@@ -5,6 +5,7 @@ $breakpoints: (
   medium: 740px,
   medium_plus: 840px,
   large: 980px,
+  large_plus: 1040px,
   wide: 1200px,
   ultra_wide: 1400px,
 );
@@ -16,8 +17,9 @@ $c_black: #181818;
 $c_white: #fff;
 $c_medium_gray: #6d6d6d;
 $c_dark_gray: #333;
-$c_orange: #faa2a9;
+$c_pure_black: #000;
 $c_light_gray: #e4e4e4;
+$c_orange: #ff616e;
 
 // Hover and focus states.
 // Can be used like so: #{$a-tags-hover} {...

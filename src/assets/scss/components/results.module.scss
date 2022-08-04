@@ -1,0 +1,53 @@
+@use "sass-rem" as rem;
+@use "../utils" as *;
+@use "sass-mq/mq" with (
+  $breakpoints: $breakpoints
+);
+
+.wrap {
+  box-shadow: 1px 0px 20px 3px rgba(0, 0, 0, 0.1);
+  @include container-shadow();
+  border-radius: rem.convert(20px);
+  margin-top: rem.convert(40px);
+  margin-bottom: rem.convert(40px);
+
+  @include mq.mq($from: large_plus) {
+    display: flex;
+  }
+}
+
+.colBG {
+  @include mq.mq($from: large_plus) {
+    width: 35%;
+  }
+}
+
+.colContent {
+  padding: rem.convert(40px);
+
+  @include mq.mq($from: large_plus) {
+    width: 65%;
+  }
+}
+
+.colBGIMG {
+  width: 100%;
+  height: 360px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-bottom-right-radius: rem.convert(20px);
+
+  @include mq.mq($until: large_plus) {
+    border-bottom-left-radius: rem.convert(20px);
+  }
+
+  @include mq.mq($from: large_plus) {
+    border-top-right-radius: rem.convert(20px);
+    height: 450px;
+  }
+}
+
+.title {
+  font-size: 60px;
+  line-height: 1.3;
+}
