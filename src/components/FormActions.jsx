@@ -21,7 +21,7 @@ const FormActions = ({ onLockClick, onNextClick, formValidationMessage }) => {
         </div>
       )}
 
-      {/* Enable disable buttons below with conditions and add accessibility. */}
+      {/* Show / hide buttons below with conditions. */}
       <div className={styleFormActions.btnItems}>
         <div
           className={`${styleFormActions.btnItem} ${styleFormActions.btnItemLock}`}

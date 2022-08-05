@@ -29,7 +29,7 @@ const questionData = [
   {
     dataID: "1",
     dataMultiple: "false",
-    question: "Which of the following is NOT a work done by Shakespeare?",
+    question: "Which of the following is NOT a work written by Shakespeare?",
     incorrectAnswers: [
       "Measure For Measure",
       "Titus Andronicus",

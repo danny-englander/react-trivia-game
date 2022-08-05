@@ -6,12 +6,16 @@
 
 .appWrap {
   @include container(1280px);
-  margin-top: 80px;
   overflow-x: hidden;
+  margin-top: rem.convert(30px);
 
   @include mq.mq($from: small_plus) {
     padding-left: rem.convert(50px);
     padding-right: rem.convert(50px);
+  }
+
+  @include mq.mq($from: medium) {
+    margin-top: rem.convert(80px);
   }
 }
 
