@@ -68,7 +68,7 @@ const questionData = [
   {
     dataID: "2",
     dataMultiple: "false",
-    question: "In the 1976 film, Network, which character yelled out a window, \"I'm mad as hell and I'm not going to take this anymore\" ",
+    question: "In the 1976 film, Network, which character yelled out a window, \"I'm mad as hell and I'm not going to take this anymore!\" ",
     correctAnswer: "Howard Beale",
     incorrectAnswers: [
       "Max Schumacher",
