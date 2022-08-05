@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.13.5/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.13.5"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.13.5/dist/index.umd.min.js"></script><script>(r => {
+                setTimeout(r);
+              })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root, jsonOptions) => {
+        const markmap = getMarkmap();
+        window.mm = markmap.Markmap.create('svg#mindmap', (getOptions || markmap.deriveOptions)(jsonOptions), root);
+      })(() => window.markmap,null,{"type":"heading","depth":0,"payload":{"lines":[0,1]},"content":"TriviaLand, an accessible React.js trivia game","children":[{"type":"heading","depth":1,"payload":{"lines":[4,5]},"content":"Code methodology and overview","children":[{"type":"fence","depth":2,"content":"<pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token keyword\">const</span> <span class=\"token function-variable function\">onLockClick</span> <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token arrow operator\">=></span> <span class=\"token punctuation\">{</span>\n  <span class=\"token comment\">// If no answer has been selected, set a form validation message.</span>\n  <span class=\"token keyword control-flow\">if</span> <span class=\"token punctuation\">(</span>selectedAnswer <span class=\"token operator\">===</span> <span class=\"token string\">''</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">setFormValidationMessage</span><span class=\"token punctuation\">(</span><span class=\"token string\">'Please choose an answer from the choices above.'</span><span class=\"token punctuation\">)</span>\n    <span class=\"token keyword control-flow\">return</span>\n  <span class=\"token punctuation\">}</span>\n  <span class=\"token comment\">// Otherwise, dispatch and show the correct answer once the answers are locked in.</span>\n  <span class=\"token function\">dispatch</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">{</span> <span class=\"token literal-property property\">type</span><span class=\"token operator\">:</span> <span class=\"token string\">'SELECT_ANSWER'</span><span class=\"token punctuation\">,</span> <span class=\"token literal-property property\">payload</span><span class=\"token operator\">:</span> selectedAnswer <span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span>\n<span class=\"token punctuation\">}</span>\n</code></pre>\n"}]},{"type":"heading","depth":1,"payload":{"lines":[26,27]},"content":"Design"},{"type":"heading","depth":1,"payload":{"lines":[30,31]},"content":"Styling / theming","children":[{"type":"fence","depth":2,"content":"<pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token keyword module\">import</span> <span class=\"token imports\">styleFormActions</span> <span class=\"token keyword module\">from</span> <span class=\"token string\">'../assets/scss/components/formactions.module.scss'</span>\n</code></pre>\n"}]},{"type":"heading","depth":1,"payload":{"lines":[40,41]},"content":"Running this app locally","children":[{"type":"list_item","depth":2,"payload":{"lines":[44,45],"index":1},"content":"1. clone the repo: <code>git clone git@github.com:danny-englander/react-trivia-game.git</code>"},{"type":"list_item","depth":2,"payload":{"lines":[45,46],"index":2},"content":"2. <code>cd react-trivia-game</code>"},{"type":"list_item","depth":2,"payload":{"lines":[46,47],"index":3},"content":"3. Ensure you are using node 16 by running <code>node -v</code> or if you have Node Version Manager installed, run <code>nvm use</code>"},{"type":"list_item","depth":2,"payload":{"lines":[47,48],"index":4},"content":"4. Run <code>npm install</code>"},{"type":"list_item","depth":2,"payload":{"lines":[48,49],"index":5},"content":"5. Finally, run <code>npm start</code> and that will open up the app in your browser."}]},{"type":"heading","depth":1,"payload":{"lines":[50,51]},"content":"Demo"},{"type":"heading","depth":1,"payload":{"lines":[54,55]},"content":"Roadmap","children":[{"type":"list_item","depth":2,"payload":{"lines":[56,58]},"content":"Fix tabbing bug so that the tabindex goes back to the beginning on the next screen or even better, to the beginning<br>\nof the form. probably React's <code>useRef</code> might come in handy for this."},{"type":"list_item","depth":2,"payload":{"lines":[58,59]},"content":"Allow for multiple answers to some questions"},{"type":"list_item","depth":2,"payload":{"lines":[59,60]},"content":"Implement a splash screen to start off the game"},{"type":"list_item","depth":2,"payload":{"lines":[60,61]},"content":"Make improvements based on peer feedback"},{"type":"list_item","depth":2,"payload":{"lines":[61,62]},"content":"Keep track of a user's scores, add something like, &quot;your highest score so far is...&quot;"},{"type":"list_item","depth":2,"payload":{"lines":[62,63]},"content":"Randomize questions"},{"type":"list_item","depth":2,"payload":{"lines":[63,64]},"content":"Hook up a trivia API"}]}]},{})</script>
+</body>
+</html>
