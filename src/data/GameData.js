@@ -94,7 +94,7 @@ const questionData = [
   {
     dataID: "4",
     dataMultiple: "false",
-    question: "This Formula One race car driver who has won the world championship 7 times.",
+    question: "Name the Formula One race car driver who has won the world championship 7 times.",
     incorrectAnswers: [
       "Ferdinand Alonso",
       "Niki Lauda",
