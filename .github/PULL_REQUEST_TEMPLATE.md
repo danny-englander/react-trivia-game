@@ -1,26 +1,37 @@
-## Description
+## PR Summary
 
-<!-- this is some commented text -->
+Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context.
 
-Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
+## Related Github Issue
 
-Fixes # (issue)
+- fixes #(issue)
 
 ## Type of change
 
 Please delete options that are not relevant.
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Task
+- [ ] Bug fix
+- [ ] New feature
 - [ ] This change requires a documentation update
 
-## How Has This Been Tested?
+## Branch Name
 
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration
+The name of this branch
 
-- [ ] Test A
-- [ ] Test B
+## Testing environment
+
+Link to a URL or to be tested on local dev environment.
+
+## Detailed Testing steps
+
+Link to testing steps in the issue or list them here:
+
+- [ ] Testing step 1
+- [ ] Testing step 2
+- [ ] Testing step 3
+
+etc...
 
 ## Checklist:
 
@@ -29,7 +40,3 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published in downstream modules
-      Once you have created your template, it will appear in the dropdown menu when contributors open a new pull request in your repository. They can then select the template and fill in the information as needed.
