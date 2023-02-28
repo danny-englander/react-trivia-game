@@ -1,47 +1,47 @@
-import React, { useContext, useState } from 'react'
-import { GameContext } from '../contexts/GameContext'
-import Question from './Question'
-import Results from './Results'
-import FormActions from './FormActions'
+import React, { useContext, useState } from "react";
+import { GameContext } from "../contexts/GameContext";
+import Question from "./Question";
+import Results from "./Results";
+import FormActions from "./FormActions";
 
 const Game = () => {
-  const [gameState, dispatch] = useContext(GameContext)
-  console.log('gameState', gameState)
+  const [gameState, dispatch] = useContext(GameContext);
+  console.log("gameState", gameState);
   // Define a local state for the selected answer.
   // This helps keep track of the answer in a local state.
-  const [selectedAnswer, setSelectedAnswer] = useState('')
-  const [formValidationMessage, setFormValidationMessage] = useState('')
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [formValidationMessage, setFormValidationMessage] = useState("");
   // Custom onchange for input click event.
   // (For prop - onSelectAnswer).
   // This just keeps track of what the user clicked on in a local state
   // i.e. selectedAnswer, setSelectedAnswer as per above.
   const onChange = (e) => {
-    console.log('input target', e.target.value)
-    setSelectedAnswer(e.target.value)
-    setFormValidationMessage('')
-  }
+    console.log("input target", e.target.value);
+    setSelectedAnswer(e.target.value);
+    setFormValidationMessage("");
+  };
 
-  // A sort of submit button to lock answer and finalize the answer.
+  // Button to lock answer and finalize the answer.
   // Local state that keeps track.
   const onLockClick = () => {
-    console.log('onLockClick selectedAnswer', selectedAnswer)
+    console.log("onLockClick selectedAnswer", selectedAnswer);
     // If no answer has been selected, set a form validation message.
-    if (selectedAnswer === '') {
+    if (selectedAnswer === "") {
       setFormValidationMessage(
-        'Please choose an answer from the choices above.',
-      )
-      return
+        "Please choose an answer from the choices above."
+      );
+      return;
     }
     // Otherwise, dispatch and show the correct answer once the answers are locked in.
-    dispatch({ type: 'SELECT_ANSWER', payload: selectedAnswer })
-  }
+    dispatch({ type: "SELECT_ANSWER", payload: selectedAnswer });
+  };
 
   // We need to reset the form state for the next question.
   const onNextClick = () => {
-    dispatch({ type: 'NEXT_QUESTION' })
-    setSelectedAnswer('')
-  }
-  console.log('gameState in Game.jsx', gameState)
+    dispatch({ type: "NEXT_QUESTION" });
+    setSelectedAnswer("");
+  };
+  console.log("gameState in Game.jsx", gameState);
 
   return (
     <>
@@ -67,7 +67,7 @@ const Game = () => {
         </>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Game
+export default Game;
